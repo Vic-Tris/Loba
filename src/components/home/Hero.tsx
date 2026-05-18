@@ -37,10 +37,10 @@ export function Hero() {
             
             <h1 className="text-4xl lg:text-[2.85rem] font-heading font-extrabold text-primary leading-tight mb-6">
               Get Your Academic Work Done Right; <br className="hidden md:block"/> 
-              <span className="text-primary-light ">Without Stress, Delays, or Rewrites</span>
+              <span className="text-indigo-900 ">Without Stress, Delays, or Rewrites</span>
             </h1>
             
-            <p className="text-lg text-primary-light mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 mb-10 max-w-2xl leading-relaxed">
               We help students and professionals deliver high-quality projects, proposals, and career documents with expert precision and fast turnaround.
             </p>
 
