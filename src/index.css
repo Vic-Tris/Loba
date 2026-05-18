@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #003262;
+  --color-primary-dark: #002251;
+  --color-primary-light: #0056A6;
+  --color-accent: #1E3A8A;
+  --color-accent-light: #DBEAFE;
+  --color-accent-dark: #1E40AF;
+  --color-success: #2E7D5C;
+  --color-danger: #C0392B;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+
+  --color-bg-alt: #F5F7FA;
+  --color-bg-dark: #0D1B2A;
+
+  --color-text-body: #36454F;
+  --color-text-muted: #708090;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+@layer base {
+  body {
+    @apply font-body text-text-body bg-white overflow-x-hidden leading-relaxed;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-heading font-bold text-slate-950;
+  }
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #003262 0%, #1E3A8A 100%);
+}
+

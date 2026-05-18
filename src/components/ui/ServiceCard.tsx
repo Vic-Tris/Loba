@@ -1,0 +1,1 @@
+//home page kind of service card for each of the 8 services on the home page, with link to their details page

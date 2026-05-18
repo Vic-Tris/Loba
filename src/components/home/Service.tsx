@@ -1,0 +1,1 @@
+// uses ServiceCard from ui for the 8 services on the home page, with link to their details page

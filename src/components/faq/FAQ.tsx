@@ -1,0 +1,1 @@
+// full faq page with all the questions and answers, use cta from home in the faq page too
