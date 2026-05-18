@@ -35,7 +35,7 @@ export function Hero() {
               Loba Scholarly Consulting
             </span>
             
-            <h1 className="text-4xl lg:text-[2.85rem] font-heading font-extrabold text-slate-900  leading-tight mb-6">
+            <h1 className="text-4xl lg:text-[2.85rem] font-heading font-extrabold text-indigo-400  leading-tight mb-6">
               Get Your Academic Work Done Right; <br className="hidden md:block"/> 
               <span className="text-primary ">Without Stress, Delays, or Rewrites</span>
             </h1>
