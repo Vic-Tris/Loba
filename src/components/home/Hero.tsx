@@ -40,7 +40,7 @@ export function Hero() {
               <span className="text-[#2B6CB0] ">Without Stress, Delays, or Rewrites</span>
             </h1>
             
-            <p className="text-lg text-[#4A5568] mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg text-[#2B6CB0] mb-10 max-w-2xl leading-relaxed">
               We help students and professionals deliver high-quality projects, proposals, and career documents with expert precision and fast turnaround.
             </p>
 
