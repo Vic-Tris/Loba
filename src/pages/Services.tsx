@@ -9,13 +9,15 @@ import {
   Award, 
   FileSearch,
   CheckCircle2,
-  ArrowRight
+  ArrowRight,
+  Info
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ALL_SERVICES = [
   {
     id: 'data-analysis',
+    path: '/services/data-analysis', // Aligns perfectly with App.tsx
     title: 'Data Analysis',
     desc: 'Turn raw data into meaningful insights. We handle SPSS, R, Python, and Excel data processing for researchers.',
     icon: Database,
@@ -24,6 +26,7 @@ const ALL_SERVICES = [
   },
   {
     id: 'thesis',
+    path: '/services/thesis', // Fallback path if you create this later
     title: 'Thesis & Dissertations',
     desc: 'From proposal to final defense. Comprehensive academic support for PhD and Master’s candidates.',
     icon: Award,
@@ -32,6 +35,7 @@ const ALL_SERVICES = [
   },
   {
     id: 'academic-article',
+    path: '/services/academic-article', // Fallback path if you create this later
     title: 'Academic Articles',
     desc: 'Prepare your research for world-class journals. Our experts refine your work for maximum impact.',
     icon: FileSearch,
@@ -40,6 +44,7 @@ const ALL_SERVICES = [
   },
   {
     id: 'cover-letter',
+    path: '/services/cover-letter', // Aligns perfectly with App.tsx
     title: 'CV & Cover Letters',
     desc: 'ATS-friendly CVs and professional cover letters crafted to land interviews globally.',
     icon: Briefcase,
@@ -48,6 +53,7 @@ const ALL_SERVICES = [
   },
   {
     id: 'business-proposal',
+    path: '/services/business', // Aligns perfectly with App.tsx /services/business
     title: 'Business Proposals',
     desc: 'Win investors and clients with high-impact business documentation tailored to your industry.',
     icon: Briefcase,
@@ -56,6 +62,7 @@ const ALL_SERVICES = [
   },
   {
     id: 'academic-presentations',
+    path: '/services/academic-presentations', // Aligns perfectly with App.tsx
     title: 'Academic Presentations',
     desc: 'Captivating slides and speeches for your defense or conference presentation.',
     icon: Presentation,
@@ -64,6 +71,7 @@ const ALL_SERVICES = [
   },
   {
     id: 'undergrad-project',
+    path: '/services/undergrad', // Aligns perfectly with App.tsx /services/undergrad
     title: 'Undergraduate Projects',
     desc: 'Simplified project management and writing support for final year students across all faculties.',
     icon: PenTool,
@@ -130,15 +138,20 @@ export default function Services() {
                   </ul>
                 </div>
 
-                {/* Fixed Route Target: Point directly to the Quote page query parameters */}
-                <Link 
-                  to={`/quote?service=${service.id}`} 
-                  className="w-full block mt-auto"
-                >
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary">
-                    Get a Quote <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
+                {/* Bottom Action Grid: Both buttons fully aligned with core configuration paths */}
+                <div className="grid grid-cols-2 gap-3 mt-auto pt-4">
+                  <Link to={service.path} className="w-full block">
+                    <Button variant="outline" size="sm" className="w-full text-xs py-3 border-slate-200 text-slate-700 hover:bg-slate-50">
+                      <Info size={14} className="mr-1" /> Details
+                    </Button>
+                  </Link>
+
+                  <Link to={`/quote?service=${service.id}`} className="w-full block">
+                    <Button variant="primary" size="sm" className="w-full text-xs py-3 bg-primary text-white shadow-md shadow-primary/10">
+                      Quote <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>

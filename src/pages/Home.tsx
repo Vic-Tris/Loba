@@ -20,7 +20,7 @@ const SERVICES_SUMMARY = [
     desc: 'Well-researched, properly cited articles for journals, seminars, and course submissions.',
     icon: FileText,
     color: 'bg-blue-50 text-blue-600',
-    path: '/services/academic-articles',
+    path: '/services/academic-article', // Fallback path if created later
     category: 'ACADEMIC'
   },
   {
@@ -28,7 +28,7 @@ const SERVICES_SUMMARY = [
     desc: 'Complete final year projects — all chapters — across all departments worldwide.',
     icon: Award,
     color: 'bg-purple-50 text-purple-600',
-    path: '/services/undergraduate-projects',
+    path: '/services/undergrad', // Fixed: Aligns perfectly with App.tsx
     category: 'ACADEMIC'
   },
   {
@@ -36,7 +36,7 @@ const SERVICES_SUMMARY = [
     desc: 'Masters and PhD-level thesis writing with deep research and proper university formatting.',
     icon: Award,
     color: 'bg-indigo-50 text-indigo-600',
-    path: '/services/thesis-dissertations',
+    path: '/services/thesis', // Fallback path if created later
     category: 'ACADEMIC'
   },
   {
@@ -44,7 +44,7 @@ const SERVICES_SUMMARY = [
     desc: 'SPSS, Excel, STATA — full results tables, charts, and Chapter 4 write-up included.',
     icon: Database,
     color: 'bg-emerald-50 text-emerald-600',
-    path: '/services/data-analysis',
+    path: '/services/data-analysis', // Fixed: Aligns perfectly with App.tsx
     category: 'ACADEMIC'
   },
   {
@@ -52,7 +52,7 @@ const SERVICES_SUMMARY = [
     desc: 'Structured, well-referenced assignment responses with clear arguments for any course.',
     icon: PenTool,
     color: 'bg-orange-50 text-orange-600',
-    path: '/services/assignments-essay',
+    path: '/services/assignments-essay', // Fallback path if created later
     category: 'ACADEMIC'
   },
   {
@@ -60,7 +60,7 @@ const SERVICES_SUMMARY = [
     desc: 'Professional PPTX slides with design, speaker notes, and compelling visuals.',
     icon: Presentation,
     color: 'bg-rose-50 text-rose-600',
-    path: '/services/presentations',
+    path: '/services/academic-presentations', // Fixed: Aligns perfectly with App.tsx
     category: 'ACADEMIC'
   },
   {
@@ -68,7 +68,7 @@ const SERVICES_SUMMARY = [
     desc: 'Investor-ready proposals, business plans, and detailed company profiles.',
     icon: Briefcase,
     color: 'bg-amber-50 text-amber-600',
-    path: '/services/business-proposals',
+    path: '/services/business', // Fixed: Aligns perfectly with App.tsx
     category: 'BUSINESS'
   },
   {
@@ -76,7 +76,7 @@ const SERVICES_SUMMARY = [
     desc: 'ATS-friendly CVs and cover letters for jobs and academic institutions worldwide.',
     icon: FileText,
     color: 'bg-cyan-50 text-cyan-600',
-    path: '/services/cv-cover-letters',
+    path: '/services/cover-letter', // Fixed: Aligns perfectly with App.tsx
     category: 'BUSINESS'
   }
 ];
