@@ -43,8 +43,8 @@ const ALL_SERVICES = [
     title: 'CV & Cover Letters',
     desc: 'ATS-friendly CVs and proffessional cover letters crafted to land interviews globally.',
     icon: Briefcase,
-    features: ['ATS Optimization', 'Professional Formatting', 'Tailored Cover Letters'],
-    color: 'bg-teal-600'
+    features: ['ATS Optimization', 'Professional Formatting', 'Tailored Cover'],
+    color: 'bg-rose-600'
   },
   {
     id: 'business',
@@ -126,7 +126,17 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <Link to={`/quotes?service=${service.id}`} className="w-full">
+                <Link to={`/services/${service.id}`} className="w-full">
+                <Link 
+  to={
+    service.id === 'undergrad' ? '/services/undergraduate-projects' :
+    service.id === 'articles' ? '/services/academic-articles' :
+    service.id === 'business' ? '/services/business-proposals' :
+    `/services/${service.id}`
+  } 
+  className="w-full"
+></Link>
+                
                   <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary">
                     Get a Quote <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
