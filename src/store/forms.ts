@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { api } from "../utils/api";
 import { toast } from 'sonner';
+import axios from 'axios';
 
 interface FormState {
   isSubmittingContact: boolean;
@@ -16,7 +16,7 @@ export const useFormStore = create<FormState>((set) => ({
   submitContact: async (data: any) => {
     set({ isSubmittingContact: true });
     try {
-      await api.post('/contact', data);
+      await axios.post(import.meta.env.VITE_API_BASE_URL,data);
       toast.success('Message sent! Check your email for confirmation.');
       return true;
     } catch (error: any) {
@@ -31,7 +31,7 @@ export const useFormStore = create<FormState>((set) => ({
   submitQuote: async (data: any) => {
     set({ isSubmittingQuote: true });
     try {
-      await api.post('/quote', data);
+       await axios.post(import.meta.env.VITE_API_BASE_URL,data);
       toast.success('Quote request submitted! Confirmation sent to your email.');
       return true;
     } catch (error: any) {
