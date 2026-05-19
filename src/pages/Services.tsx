@@ -39,6 +39,14 @@ const ALL_SERVICES = [
     color: 'bg-green-600'
   },
   {
+    id:'cover-letter',
+    title: 'CV & Cover Letters',
+    desc: 'ATS-friendly CVs and proffessional cover letters crafted to land interviews globally.',
+    icon: Briefcase,
+    features: ['ATS Optimization', 'Professional Formatting', 'Tailored Cover Letters'],
+    color: 'bg-teal-600'
+  },
+  {
     id: 'business',
     title: 'Business Proposals',
     desc: 'Win investors and clients with high-impact business documentation tailored to your industry.',
@@ -47,7 +55,7 @@ const ALL_SERVICES = [
     color: 'bg-amber-600'
   },
   {
-    id: 'presentations',
+    id: 'academic-presentations',
     title: 'Academic Presentations',
     desc: 'Captivating slides and speeches for your defense or conference presentation.',
     icon: Presentation,
