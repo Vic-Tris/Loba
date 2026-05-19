@@ -16,7 +16,11 @@ export const useFormStore = create<FormState>((set) => ({
   submitContact: async (data: any) => {
     set({ isSubmittingContact: true });
     try {
-      await axios.post(import.meta.env.VITE_API_BASE_URL,data);
+      await axios.post(import.meta.env.VITE_API_BASE_URL,data, {
+        headers:{
+         'Accept':'application/json' 
+        }
+      });
       toast.success('Message sent! Check your email for confirmation.');
       return true;
     } catch (error: any) {
@@ -31,7 +35,11 @@ export const useFormStore = create<FormState>((set) => ({
   submitQuote: async (data: any) => {
     set({ isSubmittingQuote: true });
     try {
-       await axios.post(import.meta.env.VITE_API_BASE_URL,data);
+       await axios.post(import.meta.env.VITE_API_BASE_URL,data, {
+        headers:{
+          'Accept':'application/json'
+        }
+       });
       toast.success('Quote request submitted! Confirmation sent to your email.');
       return true;
     } catch (error: any) {
