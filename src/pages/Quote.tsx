@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { SEO } from '../components/ui/SEO';
 import { Button } from '../components/ui/Button';
-// import { Input } from '../components/ui/Input';
 import { FileSearch, Clock, ClipboardCheck, Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { useSearchParams } from 'react-router-dom';
@@ -99,10 +98,10 @@ export default function Quote() {
                     >
                       <option value="">Select Service</option>
                       <option value="data-analysis">Data Analysis</option>
-                      <option value="thesis">Thesis & Dissertation</option>
-                      <option value="academic-article">Academic Article</option>
-                      <option value="business-proposal">Business Proposal</option>
-                      <option value="undergrad-project">Undergraduate Project</option>
+                      <option value="business">Business Proposals</option>
+                      <option value="academic-presentations">Academic Presentations</option>
+                      <option value="undergrad">Undergraduate Projects</option>
+                      <option value="cover-letter">CV & Cover Letters</option>
                       <option value="other">Other</option>
                     </select>
                     {errors.service && <span className="text-red-400 text-xs mt-1">{errors.service.message as string}</span>}
@@ -148,7 +147,7 @@ export default function Quote() {
                   <input 
                     placeholder="Full Name" 
                     {...register('name', { required: 'Name is required' })}
-                    className={`w-full bg-slate-800 border ${errors.name ? 'border-red-500' : 'border-slate-700'} rounded-lg py-3 px-4 text-sm`}
+                    className={`w-full bg-slate-800 border ${errors.name ? 'border-red-500' : 'border-slate-700'} rounded-lg py-3 px-4 text-sm text-white`}
                   />
                   {errors.name && <span className="text-red-400 text-[10px] uppercase font-bold">{errors.name.message as string}</span>}
                   
@@ -158,13 +157,13 @@ export default function Quote() {
                       required: 'Email is required',
                       pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' }
                     })}
-                    className={`w-full bg-slate-800 border ${errors.email ? 'border-red-500' : 'border-slate-700'} rounded-lg py-3 px-4 text-sm`}
+                    className={`w-full bg-slate-800 border ${errors.email ? 'border-red-500' : 'border-slate-700'} rounded-lg py-3 px-4 text-sm text-white`}
                   />
                   {errors.email && <span className="text-red-400 text-[10px] uppercase font-bold">{errors.email.message as string}</span>}
                 </div>
 
                 <div className="flex flex-col gap-1.5 text-left">
-                   <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Additional Context</label>
+                  <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Additional Context</label>
                   <textarea 
                     placeholder="Special requirements, research area, etc."
                     {...register('context', { required: 'Project context is required' })}
