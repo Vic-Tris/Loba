@@ -37,7 +37,7 @@ export function Hero() {
             
             <h1 className="text-4xl lg:text-[2.85rem] font-heading font-extrabold text-[#1A365D] leading-tight mb-6">
               Get Your Academic Work Done Right; <br className="hidden md:block"/> 
-              <span className="text-[#000000] ">Without Stress, Delays, or Rewrites</span>
+              <span className="text-[#2B6CB0] ">Without Stress, Delays, or Rewrites</span>
             </h1>
             
             <p className="text-lg text-[#000000] ">
