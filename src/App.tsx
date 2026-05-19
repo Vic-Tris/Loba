@@ -44,6 +44,11 @@ export default function App() {
               <Route path="/services/undergrad" element={<UndergraduateProjects />} />
               <Route path="/services/cover-letter" element={<CoverLetters />} />
 
+              {/* Missing Route Fallbacks (Redirecting them safely to avoid 404s until pages are built) */}
+              <Route path="/services/academic-article" element={<Services />} />
+              <Route path="/services/thesis" element={<Services />} />
+              <Route path="/services/assignments-essay" element={<Services />} />
+
               {/* Catch-All 404 Routing */}
               <Route path="*" element={<NotFound />} />
             </Route>
