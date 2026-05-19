@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { name: 'Services', path: '/services' },
   { name: 'About', path: '/about' },
   { name: 'Pricing', path: '/pricing' },
-  { name: 'Get a Quote', path: '/quotes' },
+  { name: 'Get a Quote', path: '/quote' }, // Aligned to singular path
   { name: 'FAQ', path: '/faq' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -44,7 +44,6 @@ export function Navbar() {
               alt="loba consulting logo"
               className="w-[85px] h-[85px] rounded-3xl object-contain transition-transform group-hover:scale-105"
             />
-
           </Link>
 
           {/* Desktop Nav */}
@@ -141,4 +140,3 @@ export function Navbar() {
     </>
   );
 }
-

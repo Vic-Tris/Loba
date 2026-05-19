@@ -57,16 +57,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services - Cleaned and Matched precisely with App.tsx matrix */}
           <div className="text-left">
             <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider text-xs opacity-60">Services</h4>
             <ul className="space-y-4">
               {[
                 { name: 'Data Analysis', path: '/services/data-analysis' },
-                { name: 'Business Proposals', path: '/services/business-proposals' },
-                { name: 'Academic Articles', path: '/services/academic-articles' },
-                { name: 'Thesis & Dissertations', path: '/services/thesis-dissertations' },
-                { name: 'Assignments & Essays', path: '/services/assignments-essay' }
+                { name: 'Business Proposals', path: '/services/business' },
+                { name: 'Academic Presentations', path: '/services/academic-presentations' },
+                { name: 'Undergraduate Projects', path: '/services/undergrad' },
+                { name: 'CV & Cover Letters', path: '/services/cover-letter' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link to={item.path} className="text-slate-400 hover:text-white transition-colors text-sm">
@@ -98,7 +98,7 @@ export function Footer() {
                   <MessageCircle size={24} className="text-whatsapp" />
                   <div>
                     <p className="text-xs text-slate-500 uppercase font-bold tracking-wider">Quick Chat</p>
-                    <a href="https://wa.me/qr/NOG2LSMOM3A3O1" className="text-sm font-semibold hover:text-whatsapp transition-colors text-white">WhatsApp Support</a>
+                    <a href="https://wa.me/qr/NOG2LSMOM3A3O1" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold hover:text-whatsapp transition-colors text-white">WhatsApp Support</a>
                   </div>
                 </div>
               </li>
@@ -119,5 +119,3 @@ export function Footer() {
     </footer>
   );
 }
-
-

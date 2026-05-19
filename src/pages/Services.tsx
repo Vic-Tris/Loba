@@ -39,9 +39,9 @@ const ALL_SERVICES = [
     color: 'bg-green-600'
   },
   {
-    id:'cover-letter',
+    id: 'cover-letter',
     title: 'CV & Cover Letters',
-    desc: 'ATS-friendly CVs and proffessional cover letters crafted to land interviews globally.',
+    desc: 'ATS-friendly CVs and professional cover letters crafted to land interviews globally.',
     icon: Briefcase,
     features: ['ATS Optimization', 'Professional Formatting', 'Tailored Cover'],
     color: 'bg-rose-600'
@@ -88,7 +88,9 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">Expert Services for <br/> Academic & Career <span className="text-primary-light">Growth.</span></h1>
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+              Expert Services for <br/> Academic & Career <span className="text-primary-light">Growth.</span>
+            </h1>
             <p className="text-white/70 max-w-2xl mx-auto text-lg">
               We provide precision-driven consulting solutions that bridge the gap between academic research and professional excellence.
             </p>
@@ -109,35 +111,34 @@ export default function Services() {
                 transition={{ delay: i * 0.05 }}
                 className="group flex flex-col p-10 rounded-[40px] border border-slate-100 bg-white hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 transition-all text-left"
               >
-                <div className={`w-16 h-16 rounded-2xl ${service.color} text-white flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}>
-                  <service.icon size={30} />
+                <div>
+                  <div className={`w-16 h-16 rounded-2xl ${service.color} text-white flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}>
+                    <service.icon size={30} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-grow">
+                    {service.desc}
+                  </p>
+                  
+                  <ul className="mb-8 space-y-3">
+                    {service.features.map(f => (
+                      <li key={f} className="flex items-center gap-2 text-slate-600 text-sm">
+                        <CheckCircle2 size={16} className="text-primary-light" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-grow">
-                  {service.desc}
-                </p>
-                
-                <ul className="mb-8 space-y-3">
-                  {service.features.map(f => (
-                    <li key={f} className="flex items-center gap-2 text-slate-600 text-sm">
-                      <CheckCircle2 size={16} className="text-primary-light" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
 
-                <Link to={`/services/${service.id}`} className="w-full">
                 <Link 
-  to={
-    service.id === 'undergrad' ? '/services/undergraduate-projects' :
-    service.id === 'articles' ? '/services/academic-articles' :
-    service.id === 'business' ? '/services/business-proposals' :
-    `/services/${service.id}`
-  } 
-  className="w-full"
-></Link>
-
-                
+                  to={
+                    service.id === 'undergrad' ? '/services/undergraduate-projects' :
+                    service.id === 'articles' ? '/services/academic-articles' :
+                    service.id === 'business' ? '/services/business-proposals' :
+                    `/services/${service.id}`
+                  } 
+                  className="w-full block"
+                >
                   <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary">
                     Get a Quote <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
