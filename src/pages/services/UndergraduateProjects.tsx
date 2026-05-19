@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Check, ArrowLeft, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '../../components/ui/Button'; // Fixed import path
 
 export default function UndergraduateProjects() {
   const departments = [
@@ -160,10 +161,18 @@ export default function UndergraduateProjects() {
                 </div>
 
                 <div className="space-y-3">
-                  <Link to="/quote?service=undergraduate-projects" className="btn-primary w-full text-center block">
-                    Get a Quote
+                  {/* Fixed query router path & custom button format */}
+                  <Link to="/quote?service=undergrad-project" className="block w-full">
+                    <Button variant="primary" size="lg" className="w-full">
+                      Get a Quote
+                    </Button>
                   </Link>
-                  <a href="https://wa.me/qr/NOG2LSMOM3A3O1" className="flex items-center justify-center gap-2 w-full py-3 bg-whatsapp text-white rounded-xl font-bold hover:opacity-90 transition-opacity">
+                  <a 
+                    href="https://wa.me/qr/NOG2LSMOM3A3O1" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center justify-center gap-2 w-full py-3 bg-whatsapp text-white rounded-xl font-bold hover:opacity-90 transition-opacity"
+                  >
                     <MessageCircle size={20} />
                     <span>WhatsApp Us</span>
                   </a>

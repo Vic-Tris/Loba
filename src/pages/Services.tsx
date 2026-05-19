@@ -31,7 +31,7 @@ const ALL_SERVICES = [
     color: 'bg-purple-600'
   },
   {
-    id: 'articles',
+    id: 'academic-article',
     title: 'Academic Articles',
     desc: 'Prepare your research for world-class journals. Our experts refine your work for maximum impact.',
     icon: FileSearch,
@@ -47,7 +47,7 @@ const ALL_SERVICES = [
     color: 'bg-rose-600'
   },
   {
-    id: 'business',
+    id: 'business-proposal',
     title: 'Business Proposals',
     desc: 'Win investors and clients with high-impact business documentation tailored to your industry.',
     icon: Briefcase,
@@ -63,7 +63,7 @@ const ALL_SERVICES = [
     color: 'bg-rose-600'
   },
   {
-    id: 'undergrad',
+    id: 'undergrad-project',
     title: 'Undergraduate Projects',
     desc: 'Simplified project management and writing support for final year students across all faculties.',
     icon: PenTool,
@@ -111,12 +111,12 @@ export default function Services() {
                 transition={{ delay: i * 0.05 }}
                 className="group flex flex-col p-10 rounded-[40px] border border-slate-100 bg-white hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 transition-all text-left"
               >
-                <div>
+                <div className="flex-grow">
                   <div className={`w-16 h-16 rounded-2xl ${service.color} text-white flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}>
                     <service.icon size={30} />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-grow">
+                  <p className="text-slate-500 text-sm leading-relaxed mb-8">
                     {service.desc}
                   </p>
                   
@@ -130,14 +130,10 @@ export default function Services() {
                   </ul>
                 </div>
 
+                {/* Fixed Route Target: Point directly to the Quote page query parameters */}
                 <Link 
-                  to={
-                    service.id === 'undergrad' ? '/services/undergraduate-projects' :
-                    service.id === 'articles' ? '/services/academic-articles' :
-                    service.id === 'business' ? '/services/business-proposals' :
-                    `/services/${service.id}`
-                  } 
-                  className="w-full block"
+                  to={`/quote?service=${service.id}`} 
+                  className="w-full block mt-auto"
                 >
                   <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary">
                     Get a Quote <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
