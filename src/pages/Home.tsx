@@ -36,7 +36,7 @@ const SERVICES_SUMMARY = [
     desc: 'Masters and PhD-level thesis writing with deep research and proper university formatting.',
     icon: Award,
     color: 'bg-indigo-50 text-indigo-600',
-    path: '/services/thesis', // Fallback path if created later
+    path: '/services/thesisdissertations', // Fallback path if created later
     category: 'ACADEMIC'
   },
   {
