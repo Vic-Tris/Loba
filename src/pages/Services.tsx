@@ -26,7 +26,7 @@ const ALL_SERVICES = [
   },
   {
     id: 'thesis',
-    path: '/services/thesis', // Fallback path if you create this later
+    path: '/services/thesisdissertations', // Fallback path if you create this later
     title: 'Thesis & Dissertations',
     desc: 'From proposal to final defense. Comprehensive academic support for PhD and Master’s candidates.',
     icon: Award,
