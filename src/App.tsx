@@ -3,6 +3,9 @@ import { lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import AppLayout from "./layouts/AppLayout";
 import { NotFound } from "./pages/NotFound";
+import AcademicArticle from "./pages/services/AcademicArticle";
+import ThesisDissertations from "./pages/services/ThesisDissertations";
+import AssignmentEssay from "./pages/services/AssignmentEssay";
 
 // Lazy Loaded Base Pages
 const Home = lazy(() => import("./pages/Home"));
@@ -45,9 +48,9 @@ export default function App() {
               <Route path="/services/cover-letter" element={<CoverLetters />} />
 
               {/* Missing Route Fallbacks (Redirecting them safely to avoid 404s until pages are built) */}
-              <Route path="/services/academic-article" element={<Services />} />
-              <Route path="/services/thesis" element={<Services />} />
-              <Route path="/services/assignments-essay" element={<Services />} />
+              <Route path="/services/academic-article" element={<AcademicArticle />} />
+              <Route path="/services/thesisdissertations" element={<ThesisDissertations />} />
+              <Route path="/services/assignments-essay" element={<AssignmentEssay />} />
 
               {/* Catch-All 404 Routing */}
               <Route path="*" element={<NotFound />} />
