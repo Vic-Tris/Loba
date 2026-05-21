@@ -88,7 +88,18 @@ export default function Quote() {
               <h3 className="text-2xl font-bold mb-2 text-left">Quote Details</h3>
               <p className="text-slate-400 text-sm mb-8 text-left">Fill the form below to get an accurate estimate.</p>
               
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form
+                name="quote"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit(onSubmit)}
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="quote" />
+                <p className="hidden">
+                  <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-1.5 text-left">
                     <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Service Category</label>
