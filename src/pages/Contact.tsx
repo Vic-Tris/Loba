@@ -93,18 +93,7 @@ export default function Contact() {
                 className="bg-white p-10 rounded-[32px] shadow-2xl shadow-primary/5 border border-slate-100"
               >
                 <h3 className="text-2xl font-bold text-slate-900 mb-8 text-left">Send a Message</h3>
-                <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="space-y-6"
-                >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <p className="hidden">
-                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                  </p>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Input 
                       label="Full Name" 

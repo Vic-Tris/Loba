@@ -24,7 +24,7 @@ export const QuoteForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Fires request directly to our relative Netlify API setup
+    // Fires request directly to our relative Vercel API endpoint
     const success = await submitQuote(formData);
     
     if (success) {

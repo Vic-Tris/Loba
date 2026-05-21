@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Use relative URL in production so Netlify redirects can intercept it smoothly
+// Use relative URL in production so Vercel serverless functions can be reached under /api
 const baseURL = import.meta.env.VITE_API_BASE_URL || '/api';
 
 if (import.meta.env.DEV) {
