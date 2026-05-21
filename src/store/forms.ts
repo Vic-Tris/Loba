@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { toast } from 'sonner';
-import axios from 'axios';
+import { api } from '../utils/api'; // <-- Connects to our new relative routing configuration
 
 interface FormState {
   isSubmittingContact: boolean;
@@ -16,15 +16,12 @@ export const useFormStore = create<FormState>((set) => ({
   submitContact: async (data: any) => {
     set({ isSubmittingContact: true });
     try {
-      await axios.post('/api/send-email', data, {
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+      // Using 'api.post' routes this through '/api/send-email' relatively
+      await api.post('/send-email', data);
       toast.success('Message sent! Check your email for confirmation.');
       return true;
     } catch (error: any) {
-      const message = error.response?.data?.message || 'Failed to send message. Please try again.';
+      const message = error.response?.data?.error || 'Failed to send message. Please try again.';
       toast.error(message);
       return false;
     } finally {
@@ -35,15 +32,12 @@ export const useFormStore = create<FormState>((set) => ({
   submitQuote: async (data: any) => {
     set({ isSubmittingQuote: true });
     try {
-      await axios.post('/api/send-email', data, {
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+      // Using 'api.post' routes this through '/api/send-email' relatively
+      await api.post('/send-email', data);
       toast.success('Quote request sent successfully!');
       return true;
     } catch (error: any) {
-      const message = error.response?.data?.message || 'Failed to send quote request. Please try again.';
+      const message = error.response?.data?.error || 'Failed to send quote request. Please try again.';
       toast.error(message);
       return false;
     } finally {
