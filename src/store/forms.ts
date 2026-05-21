@@ -13,10 +13,9 @@ export const useFormStore = create<FormState>((set) => ({
   isSubmittingContact: false,
   isSubmittingQuote: false,
 
- submitContact: async (data: any) => {
+  submitContact: async (data: any) => {
     set({ isSubmittingContact: true });
     try {
-      // Swapped out the old environment variable for our local API endpoint
       await axios.post('/api/send-email', data, {
         headers: {
           'Accept': 'application/json'
@@ -36,19 +35,19 @@ export const useFormStore = create<FormState>((set) => ({
   submitQuote: async (data: any) => {
     set({ isSubmittingQuote: true });
     try {
-      // Swapped out the old environment variable here too
       await axios.post('/api/send-email', data, {
         headers: {
           'Accept': 'application/json'
         }
       });
-      toast.success('Quote request submitted! Confirmation sent to your inbox.');
+      toast.success('Quote request sent successfully!');
       return true;
     } catch (error: any) {
-      const message = error.response?.data?.message || 'Failed to submit quote request. Please try again.';
+      const message = error.response?.data?.message || 'Failed to send quote request. Please try again.';
       toast.error(message);
       return false;
     } finally {
       set({ isSubmittingQuote: false });
     }
-  },
+  }
+}));
