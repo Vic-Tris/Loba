@@ -39,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     await transporter.sendMail(mailOptions);
-    return res.status(200).json({ success: true, message: 'Email delivered successfully' });
+    return res.status(200).json({ success: true,  message: 'Email delivered successfully' });
   } catch (error) {
     console.error('Nodemailer error:', error);
     return res.status(500).json({ error: 'Failed to send email' });
