@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useFormStore } from '../store/forms'; // Points to your Zustand store configuration
+import { useFormStore } from '../../store/forms'; // Points to your Zustand store configuration
 
 export const QuoteForm: React.FC = () => {
   const { submitQuote, isSubmittingQuote } = useFormStore();
