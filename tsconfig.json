@@ -22,10 +22,12 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+
+  "include": ["src", "src/env.d.ts"],
   "exclude": [
     "node_modules",
     "dist",
     "api"
   ]
 }
+ 
