@@ -13,12 +13,13 @@ export const useFormStore = create<FormState>((set) => ({
   isSubmittingContact: false,
   isSubmittingQuote: false,
 
-  submitContact: async (data: any) => {
+ submitContact: async (data: any) => {
     set({ isSubmittingContact: true });
     try {
-      await axios.post(import.meta.env.VITE_API_BASE_URL,data, {
-        headers:{
-         'Accept':'application/json' 
+      // Swapped out the old environment variable for our local API endpoint
+      await axios.post('/api/send-email', data, {
+        headers: {
+          'Accept': 'application/json'
         }
       });
       toast.success('Message sent! Check your email for confirmation.');
@@ -35,19 +36,19 @@ export const useFormStore = create<FormState>((set) => ({
   submitQuote: async (data: any) => {
     set({ isSubmittingQuote: true });
     try {
-       await axios.post(import.meta.env.VITE_API_BASE_URL,data, {
-        headers:{
-          'Accept':'application/json'
+      // Swapped out the old environment variable here too
+      await axios.post('/api/send-email', data, {
+        headers: {
+          'Accept': 'application/json'
         }
-       });
-      toast.success('Quote request submitted! Confirmation sent to your email.');
+      });
+      toast.success('Quote request submitted! Confirmation sent to your inbox.');
       return true;
     } catch (error: any) {
-      const message = error.response?.data?.message || 'Failed to submit quote. Please try again.';
+      const message = error.response?.data?.message || 'Failed to submit quote request. Please try again.';
       toast.error(message);
       return false;
     } finally {
       set({ isSubmittingQuote: false });
     }
   },
-}));
