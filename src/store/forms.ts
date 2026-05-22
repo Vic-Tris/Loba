@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { toast } from 'sonner';
-import { api } from '../utils/api'; // <-- Connects to our new relative routing configuration
+import axios from 'axios';
 
 interface FormState {
   isSubmittingContact: boolean;
@@ -9,6 +9,9 @@ interface FormState {
   submitQuote: (data: any) => Promise<boolean>;
 }
 
+// Your verified Formspree endpoint
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykvwngg';
+
 export const useFormStore = create<FormState>((set) => ({
   isSubmittingContact: false,
   isSubmittingQuote: false,
@@ -16,8 +19,11 @@ export const useFormStore = create<FormState>((set) => ({
   submitContact: async (data: any) => {
     set({ isSubmittingContact: true });
     try {
-      // Using 'api.post' routes this through '/api/send-email' relatively
-      await api.post('/send-email', data);
+      await axios.post(FORMSPREE_ENDPOINT, data, {
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
       toast.success('Message sent! Check your email for confirmation.');
       return true;
     } catch (error: any) {
@@ -32,8 +38,11 @@ export const useFormStore = create<FormState>((set) => ({
   submitQuote: async (data: any) => {
     set({ isSubmittingQuote: true });
     try {
-      // Using 'api.post' routes this through '/api/send-email' relatively
-      await api.post('/send-email', data);
+      await axios.post(FORMSPREE_ENDPOINT, data, {
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
       toast.success('Quote request sent successfully!');
       return true;
     } catch (error: any) {
