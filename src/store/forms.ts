@@ -10,7 +10,7 @@ interface FormState {
 }
 
 // Your verified Formspree endpoint
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykvwngg';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meedkdqq';
 
 export const useFormStore = create<FormState>((set) => ({
   isSubmittingContact: false,
