@@ -11,7 +11,7 @@ export function Loader() {
       >
         <div className="w-24 h-24 bg-primary flex items-center justify-center text-white font-bold text-3xl rounded-2xl shadow-xl shadow-primary/20 overflow-hidden">
           <img 
-            src="/images/favicon.png" 
+            src="/images/favicon.jpg" 
             alt="Loading" 
             className="w-full h-full object-cover"
           />
