@@ -1,4 +1,3 @@
-import React from 'react';
 import scholarImage from '../assets/images/bgremoved.png';
 
 interface HeroSectionProps {

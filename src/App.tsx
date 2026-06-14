@@ -3,14 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import BottomCards from './components/BottomCards';
 import ScheduleModal from './components/ScheduleModal';
 import NavigationDrawers from './components/NavigationDrawers';
 import CardReaderModal from './components/CardReaderModal';
-import { Sparkles, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 interface SessionReceipt {
   preferredDate: string;

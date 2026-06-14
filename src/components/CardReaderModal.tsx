@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, Clock, User, Heart, Share2, Bookmark } from 'lucide-react';
-import { CardData } from './BottomCards';
 
+export interface CardData {
+  imageUrl: string;
+  title: string;
+  tag: string;
+  author: string;
+  readingTime: string;
+  date: string;
+  content: string;
+}
 interface CardReaderModalProps {
   card: CardData | null;
   onClose: () => void;

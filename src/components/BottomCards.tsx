@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { Star } from 'lucide-react';
 
 const testimonials = [
@@ -53,24 +53,9 @@ interface BottomCardsProps {
   onCardSelected?: (card: any) => void;
 }
 
-export default function BottomCards({ onCardSelected }: BottomCardsProps) {
+export default function BottomCards({}: BottomCardsProps) {
   const [tooltip, setTooltip] = useState<{ t: typeof testimonials[0]; x: number } | null>(null);
   const trayRef = useRef<HTMLDivElement>(null);
-
-  const handleEnter = useCallback((t: typeof testimonials[0], pillEl: HTMLDivElement) => {
-    const pillRect = pillEl.getBoundingClientRect();
-    const trayRect = trayRef.current?.getBoundingClientRect();
-    if (!trayRect) return;
-    
-    // Calculate x relative to tray, ensuring it doesn't push the tooltip off-screen
-    const rawX = pillRect.left - trayRect.left + pillRect.width / 2;
-    // Mobile-safe bounded X position
-    const minX = 140; // Approx half tooltip width + padding
-    const maxX = trayRect.width - 140;
-    const safeX = Math.max(minX, Math.min(rawX, maxX));
-
-    setTooltip({ t, x: safeX });
-  }, []);
 
   const handleToggle = useCallback((t: typeof testimonials[0], pillEl: HTMLDivElement) => {
     setTooltip(current => {
