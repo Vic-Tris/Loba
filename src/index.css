@@ -1,46 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #003262;
-  --color-primary-dark: #002251;
-  --color-primary-light: #0056A6;
-  --color-accent: #1E3A8A;
-  --color-accent-light: #DBEAFE;
-  --color-accent-dark: #1E40AF;
-  --color-success: #2E7D5C;
-  --color-danger: #C0392B;
-  --color-whatsapp: #25D366;
-  --color-whatsapp-dark: #128C7E;
-
-  --color-bg-alt: #F5F7FA;
-  --color-bg-dark: #0D1B2A;
-
-  --color-text-body: #36454F;
-  --color-text-muted: #708090;
-
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Poppins', sans-serif;
-
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* LOBA Specific Branding Colors refined to gorgeous, softer steel-slate tones that blend with the video background */
+  --color-brand-navy: #162235;
+  --color-brand-navy-light: #253347;
+  --color-brand-blue: #337ab7;
+  --color-brand-blue-dark: #245d8f;
+  --color-brand-ice: #f0f4f8;
 }
 
-@layer base {
-  body {
-    @apply font-body text-text-body bg-white overflow-x-hidden leading-relaxed;
+/* Faint vertical gridlines style in background, just like the reference screenshot */
+.bg-grid-lines {
+  background-image: 
+    linear-gradient(to right, rgba(13, 44, 92, 0.02) 1px, transparent 1px);
+  background-size: calc(100% / 8) 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 44, 92, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 44, 92, 0.3);
+}
+
+/* Animations Keyframes */
+@keyframes gentles-wave {
+  0% {
+    background-position: 0% 50%;
   }
-  h1, h2, h3, h4, h5 {
-    @apply font-heading font-bold text-slate-950;
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.bg-gentle-wave {
+  /* Aligned with the royal blue and deep navy tones of the custom LOBA logo */
+  background: linear-gradient(115deg, #b2cadf 0%, #f4f7fa 35%, #dce9f5 66%, #a3c4e0 100%);
+  background-size: 260% 260%;
+  animation: gentles-wave 24s ease-in-out infinite;
 }
 
-.hero-gradient {
-  background: linear-gradient(135deg, #003262 0%, #1E3A8A 100%);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* CSS Animation Class Overrides */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shadow-text {
+  text-shadow: 0 2px 4px rgba(13, 44, 92, 0.2);
+}
+
+.text-white-outline {
+  text-shadow: 
+    0 1px 3px rgba(255, 255, 255, 0.4),
+    0 0 8px rgba(255, 255, 255, 0.45);
+}
+
+.text-white-outline-thin {
+  text-shadow: 
+    0 1px 2px rgba(255, 255, 255, 0.35),
+    0 0 5px rgba(255, 255, 255, 0.35);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
