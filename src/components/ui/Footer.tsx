@@ -79,15 +79,15 @@ export function Footer() {
             <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider text-xs opacity-60">Contact</h4>
             <ul className="space-y-4">
               <li className="flex gap-3 text-slate-400 text-sm">
-                <Phone size={18} className="text-primary-light shrink-0" />
+                <Phone size={18} className="text-white shrink-0" />
                 <span>+234808 584 7676</span>
               </li>
               <li className="flex gap-3 text-slate-400 text-sm">
-                <Mail size={18} className="text-primary-light shrink-0" />
+                <Mail size={18} className="text-white shrink-0" />
                 <span>lobaconsulting2@gmail.com</span>
               </li>
               <li className="flex gap-3 text-slate-400 text-sm">
-                <MapPin size={18} className="text-primary-light shrink-0" />
+                <MapPin size={18} className="text-white shrink-0" />
                 <span>Ibadan, Nigeria</span>
               </li>
               <li>
