@@ -37,10 +37,9 @@ export function Hero({ onScheduleClick: _onScheduleClick }: { onScheduleClick?: 
               Loba Scholarly Consulting
             </span>
             
-            {/* H1 — Commanding size, strong weight */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-heading font-extrabold text-[#1A365D] leading-[1.1] tracking-tight mb-4">
-              Get Your Academic Work Done Right;{' '}
-              <span className="text-[#2B6CB0]">Without Stress, Delays, or Rewrites</span>
+            <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-5xl font-heading font-extrabold text-[#1A365D] leading-[1.2] tracking-tight mb-6">
+              Academic Work Done Right
+              <span className="text-[#2B6CB0] block mt-1.5 md:mt-2">No Stress, No Rewrites</span>
             </h1>
             
             {/* Body copy — clear, comfortable line length */}

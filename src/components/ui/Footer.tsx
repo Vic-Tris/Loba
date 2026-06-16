@@ -12,10 +12,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-6 text-left">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center text-white font-bold text-xl rounded-lg">
-                L
-              </div>
-              <span className="font-heading font-bold text-xl text-white">Loba Consulting</span>
+              <img src="/LOBA Scholar Consulting white.svg" alt="Loba Consulting Logo" className="h-10 w-auto object-contain scale-150 origin-left" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed">
               Empowering students and professionals with expert academic support, 

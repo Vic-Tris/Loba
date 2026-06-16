@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Logo from './Logo';
+
 import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
@@ -26,7 +26,7 @@ export default function Header({ onNavClick, onScheduleClick, activeTopic }: Hea
       <div className="relative w-full bg-white/55 backdrop-blur-xl rounded-full border border-white/60 px-3.5 py-1 sm:px-5 sm:py-1.5 md:px-7 shadow-[0_8px_30px_rgba(17,43,85,0.05)] flex items-center justify-between">
         {/* Left: Beautiful Logo representation */}
         <div className="cursor-pointer shrink-0" onClick={() => onNavClick('home')}>
-          <Logo variant="dark" />
+          <img src="/LOBA Scholar Consulting.svg" alt="Loba Consulting Logo" className="h-10 md:h-12 w-auto object-contain scale-[1.25] origin-left" />
         </div>
 
         {/* Right Content Group (Desktop Nav Items & Action Button packed together) */}
