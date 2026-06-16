@@ -12,7 +12,7 @@ export default function HeroSection({ onScheduleClick }: HeroSectionProps) {
     <section className="px-[4.26vw] lg:px-6 pt-[6vh] lg:pt-10 pb-[2.4vh] lg:pb-0 flex-1 flex flex-col justify-start lg:justify-center select-none z-10 pointer-events-none">
       
       {/* Container - flex column on mobile, grid on desktop */}
-      <div className="relative mx-auto max-w-5xl w-full flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-[3.6vh] lg:gap-10 pointer-events-auto flex-1">
+      <div className="relative mx-auto w-full flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-[3.6vh] lg:gap-10 pointer-events-auto flex-1">
          
         {/* Left Content: Heading & Primary Copy */}
         <div className="lg:col-span-8 flex flex-col items-center lg:items-start gap-[1.8vh] lg:gap-4 z-20 w-full relative lg:ml-10">

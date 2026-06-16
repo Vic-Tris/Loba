@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Award, CheckCircle, Info, Heart } from 'lucide-react';
 
 export interface NavigationDrawersProps {
@@ -9,6 +9,17 @@ export interface NavigationDrawersProps {
 
 export default function NavigationDrawers({ activeTopic, onClose, onScheduleClick }: NavigationDrawersProps) {
   if (!activeTopic || activeTopic === 'home') return null;
+
+  useEffect(() => {
+    if (activeTopic && activeTopic !== 'home') {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeTopic]);
 
   // Local interactive states
   const [quoteService, setQuoteService] = React.useState('');
@@ -84,35 +95,36 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
   const leftPanel = getLeftPanelContent();
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-blue/35 p-4 backdrop-blur-md animate-fade-in select-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-blue/35 p-4 backdrop-blur-md animate-fade-in select-none" onClick={onClose}>
       <div 
-        className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-white/90 backdrop-blur-xl shadow-2xl border border-white/50 flex flex-col md:flex-row max-h-[90vh]"
+        className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-white/90 backdrop-blur-xl shadow-2xl border border-white/50 flex flex-col md:flex-row max-h-[90vh]"
         id="nav-modal-container"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Left Side: Brand Accent Column */}
-        <div className="hidden md:flex w-1/3 bg-brand-ice text-slate-800 p-5 flex-col justify-between relative overflow-hidden border-r border-slate-200/60">
+        <div className="hidden md:flex w-[280px] shrink-0 bg-brand-ice text-slate-800 p-7 flex-col justify-between relative overflow-hidden border-r border-slate-200/60">
           <div className="absolute top-0 right-0 -mr-6 -mt-6 w-24 h-24 rounded-full bg-brand-blue/10 blur-xl pointer-events-none" />
           
           <div className="relative z-10">
-            <div className="flex items-center gap-1.5 text-brand-blue font-bold text-[10px] uppercase tracking-wider mb-4">
-              <Award size={12} className="text-brand-blue" />
+            <div className="flex items-center gap-2 text-brand-blue font-bold text-xs uppercase tracking-wider mb-5">
+              <Award size={13} className="text-brand-blue" />
               LOBA ADVISING
             </div>
-            <h3 className="text-xl font-display font-black leading-tight tracking-tight text-slate-900">
+            <h3 className="text-xl font-display font-black leading-snug tracking-tight text-slate-900">
               {leftPanel.title}
             </h3>
-            <p className="mt-1 text-xs text-brand-blue-dark font-bold tracking-wide">
+            <p className="mt-2 text-sm text-brand-blue-dark font-bold tracking-wide">
               {leftPanel.tagline}
             </p>
             {leftPanel.desc && (
-              <p className="mt-4 text-[10.5px] text-slate-600 leading-relaxed font-semibold">
+              <p className="mt-4 text-sm text-slate-600 leading-relaxed font-semibold">
                 {leftPanel.desc}
               </p>
             )}
           </div>
           
           {leftPanel.stats && (
-            <div className="relative z-10 border-t border-slate-200 pt-3 text-[9.5px] text-slate-500 font-mono tracking-wider font-bold">
+            <div className="relative z-10 border-t border-slate-200 pt-4 text-xs text-slate-500 font-mono tracking-wide font-bold">
               • {leftPanel.stats}
             </div>
           )}
@@ -121,9 +133,9 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
         {/* Right Side: Scrollable Interactive Content */}
         <div className="flex-grow flex flex-col min-w-0">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-slate-200/50 px-6 py-4 bg-white/40">
-            <h2 className="text-sm font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-brand-blue" />
+          <div className="flex items-center justify-between border-b border-slate-200/50 px-7 py-5 bg-white/40">
+            <h2 className="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-brand-blue" />
               {activeTopic === 'about' && 'About Loba Consulting'}
               {activeTopic === 'services' && 'Our Services'}
               {activeTopic === 'pricing' && 'Pricing & Packages'}
@@ -141,7 +153,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
           </div>
 
           {/* Body */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-5 max-h-[58vh]">
+          <div className="flex-1 overflow-y-auto p-7 space-y-6 max-h-[62vh]">
             
             {/* ================================= ABOUT VIEW ================================= */}
             {activeTopic === 'about' && (
@@ -617,7 +629,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
 
                       <button
                         type="submit"
-                        className="w-full rounded-full bg-brand-navy hover:bg-brand-navy-light text-white font-bold py-2.5 text-xs shadow transition-all hover:-translate-y-0.5 cursor-pointer mt-2"
+                        className="w-full rounded-full bg-primary hover:bg-primary-dark text-white font-bold py-2.5 text-xs shadow transition-all hover:-translate-y-0.5 cursor-pointer mt-2"
                       >
                         Generate My Quote
                       </button>

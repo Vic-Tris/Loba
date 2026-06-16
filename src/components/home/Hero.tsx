@@ -4,69 +4,75 @@ import { MessageCircle, Award, FolderOpen, CalendarCheck, Rocket } from 'lucide-
 import { useState, useEffect } from 'react';
 
 const HERO_IMAGES = [
-  '/images/photo-1744320911030-1ab998d994d7.jpeg',
-  '/images/medium-shot-smiley-graduate-student[1].jpg',
-  '/images/young-male-student-leaning-lawn-reading-book_(1)[1].jpg'
+  { src: '/images/photo-1744320911030-1ab998d994d7.jpeg', pos: 'object-[center_25%]' },
+  { src: '/images/medium-shot-smiley-graduate-student[1].jpg', pos: 'object-[85%_25%]' },
+  { src: '/images/young-male-student-leaning-lawn-reading-book_(1)[1].jpg', pos: 'object-[center_25%]' }
 ];
 
-export function Hero() {
+export function Hero({ onScheduleClick: _onScheduleClick }: { onScheduleClick?: () => void }) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 3500); // 3.5s to match expert-barnacle
+    }, 3500);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-white">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+    <section className="relative w-full flex flex-col pt-8 pb-6 overflow-hidden bg-white">
+      <div className="w-full mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16">
           
+          {/* Left: Text Content — 55% width, anchored to top */}
           <motion.div 
-             initial={{ opacity: 0, y: 20 }}
+             initial={{ opacity: 0, y: 24 }}
              animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.6 }}
-             className="w-full lg:w-3/5 text-left"
+             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+             className="w-full lg:w-[55%] text-left flex flex-col justify-center"
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-accent text-xs font-bold uppercase tracking-wider mb-8">
-              <Award size={14} />
+            {/* Badge */}
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-accent text-[11px] font-bold uppercase tracking-widest mb-5 self-start">
+              <Award size={13} />
               Loba Scholarly Consulting
             </span>
             
-            <h1 className="text-4xl lg:text-[2.85rem] font-heading font-extrabold text-[#1A365D] leading-tight mb-6">
-              Get Your Academic Work Done Right; <br className="hidden md:block"/> 
-              <span className="text-[#2B6CB0] ">Without Stress, Delays, or Rewrites</span>
+            {/* H1 — Commanding size, strong weight */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-heading font-extrabold text-[#1A365D] leading-[1.1] tracking-tight mb-4">
+              Get Your Academic Work Done Right;{' '}
+              <span className="text-[#2B6CB0]">Without Stress, Delays, or Rewrites</span>
             </h1>
             
-            <p className="text-lg text-[#000000] ">
+            {/* Body copy — clear, comfortable line length */}
+            <p className="text-[1.0625rem] text-[#000000] leading-relaxed max-w-[520px] mb-6">
               We help students and professionals deliver high-quality projects, proposals, and career documents with expert precision and fast turnaround.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* Stats — horizontal strip with dividers for visual rhythm */}
+            <div className="flex items-center gap-0 mb-6 border border-slate-100 rounded-2xl overflow-hidden divide-x divide-slate-100 bg-slate-50/60">
               {[
                 { icon: FolderOpen, label: '100+', sub: 'Projects Completed' },
                 { icon: CalendarCheck, label: '2+', sub: 'Years Experience' },
                 { icon: Rocket, label: 'Fast', sub: 'Reliable Delivery' },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-primary shrink-0">
-                    <item.icon size={24} />
+                <div key={i} className="flex items-center gap-3 px-5 py-4 flex-1">
+                  <div className="w-9 h-9 bg-blue-100 rounded-lg flex items-center justify-center text-primary shrink-0">
+                    <item.icon size={18} />
                   </div>
                   <div className="flex flex-col">
-                    <strong className="text-xl font-bold text-slate-900">{item.label}</strong>
-                    <span className="text-slate-500 text-xs">{item.sub}</span>
+                    <strong className="text-lg font-extrabold text-slate-900 leading-none">{item.label}</strong>
+                    <span className="text-slate-500 text-[11px] mt-0.5 leading-tight">{item.sub}</span>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button 
                 variant="primary" 
                 size="lg" 
-                className="rounded-sm" // Matching expert-barnacle radius-sm
+                className="rounded-xl px-7 py-3.5 text-sm font-bold"
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Explore Services
@@ -74,8 +80,8 @@ export function Hero() {
               <Button 
                 variant="secondary" 
                 size="lg" 
-                className="rounded-sm"
-                leftIcon={<MessageCircle size={20} />}
+                className="rounded-xl px-7 py-3.5 text-sm font-bold"
+                leftIcon={<MessageCircle size={18} />}
                 onClick={() => window.open('https://wa.me/qr/NOG2LSMOM3A3O1', '_blank')}
               >
                 Chat on WhatsApp
@@ -83,41 +89,32 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Image Visual mirroring expert-barnacle */}
-          <div className="w-full lg:w-2/5 flex justify-center">
-             <div className="relative w-full max-w-[450px] aspect-[4/5]">
-               <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
-                 {HERO_IMAGES.map((img, i) => (
-                   <motion.img
-                     key={img}
-                     src={img}
-                     alt={`Gallery image ${i}`}
-                     className="absolute inset-0 w-full h-full object-cover"
-                     initial={{ opacity: 0 }}
-                     animate={{ opacity: current === i ? 1 : 0 }}
-                     transition={{ duration: 1 }}
-                   />
-                 ))}
-               </div>
-               
-               {/* Custom dots from expert-barnacle */}
-               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/20 backdrop-blur-md px-3 py-2 rounded-full">
-                 {HERO_IMAGES.map((_, i) => (
-                   <button
-                     key={i}
-                     onClick={() => setCurrent(i)}
-                     className={`w-2.5 h-2.5 rounded-full transition-all ${
-                       current === i ? 'bg-white scale-125' : 'bg-white/40'
-                     }`}
-                   />
-                 ))}
-               </div>
-             </div>
-          </div>
+          {/* Right: Image — 45% width, taller aspect ratio */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[45%] flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-[420px] lg:max-w-full" style={{ aspectRatio: '1/1' }}>
+              <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
+                {HERO_IMAGES.map((img, i) => (
+                  <motion.img
+                    key={img.src}
+                    src={img.src}
+                    alt={`Gallery image ${i}`}
+                    className={`absolute inset-0 w-full h-full object-cover ${img.pos}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: current === i ? 1 : 0 }}
+                    transition={{ duration: 1.2 }}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
 
         </div>
       </div>
     </section>
   );
 }
-

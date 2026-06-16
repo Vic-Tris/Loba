@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Clock, User, Heart, Share2, Bookmark } from 'lucide-react';
 
 export interface CardData {
@@ -20,6 +20,17 @@ export default function CardReaderModal({ card, onClose }: CardReaderModalProps)
   const [hasLiked, setHasLiked] = useState(false);
   const [hasBookmarked, setHasBookmarked] = useState(false);
 
+  useEffect(() => {
+    if (card) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [card]);
+
   if (!card) return null;
 
   const handleLike = () => {
@@ -33,10 +44,11 @@ export default function CardReaderModal({ card, onClose }: CardReaderModalProps)
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-blue/35 p-4 backdrop-blur-md animate-fade-in select-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-blue/35 p-4 backdrop-blur-md animate-fade-in select-none" onClick={onClose}>
       <div 
         className="relative w-full max-w-3xl overflow-hidden rounded-2xl bg-white/90 backdrop-blur-xl shadow-2xl border border-white/50 flex flex-col max-h-[90vh]"
         id="card-reader-container"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Banner Image */}
         <div className="h-44 w-full relative bg-slate-100 shrink-0">

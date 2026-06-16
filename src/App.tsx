@@ -5,11 +5,11 @@
 
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import BottomCards from './components/BottomCards';
+import Home from './pages/Home';
 import ScheduleModal from './components/ScheduleModal';
 import NavigationDrawers from './components/NavigationDrawers';
 import CardReaderModal from './components/CardReaderModal';
+import { Footer } from './components/ui/Footer';
 import { CheckCircle } from 'lucide-react';
 
 interface SessionReceipt {
@@ -55,19 +55,7 @@ export default function App() {
       className="min-h-screen w-full relative flex flex-col font-sans overflow-x-hidden text-slate-800 transition-colors duration-500"
       id="root-viewport-container"
     >
-      {/* Fullscreen Video Background with Fallback Wave Gradient and Glass Overlay */}
-      <div className="fixed inset-0 w-full h-full -z-10 overflow-hidden pointer-events-none bg-grid-lines bg-gentle-wave">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover object-center"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085844_21a8f4b3-dea5-4ede-be16-d53f6973bb14.mp4"
-        />
-        {/* Translucent glass overlay to elevate readability and blend with header glass styling */}
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-[8px]" />
-      </div>
+
 
       {/* Floating Alert if a session was just scheduled */}
       {sessionReceipt && (
@@ -97,10 +85,11 @@ export default function App() {
       />
 
       {/* Foreground Main content body with absolute overlay structure */}
-      <main className="flex-1 w-full max-w-5xl mx-auto flex flex-col pt-2 relative" id="main-content-layout">
-        <HeroSection onScheduleClick={() => setSchedulerOpen(true)} />
-        <BottomCards onCardSelected={(card: any) => setSelectedCard(card)} />
+      <main className="flex-1 w-full mx-auto flex flex-col pt-2 relative" id="main-content-layout">
+        <Home onScheduleClick={() => setSchedulerOpen(true)} onNavClick={(id) => setActiveTopic(id)} />
       </main>
+
+      <Footer />
 
       {/* Right Drawer overlays representing navbar links: Company, Acronym, Services, etc. */}
       {activeTopic && (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Calendar, Clock, BookOpen, Compass, CheckCircle2, Award } from 'lucide-react';
 
 export interface SessionData {
@@ -31,6 +31,17 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
   const [preferredTime, setPreferredTime] = useState('');
   const [notes, setNotes] = useState('');
   const [submittedSession, setSubmittedSession] = useState<SessionData | null>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -71,27 +82,28 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-blue/35 p-4 backdrop-blur-md animate-fade-in select-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-blue/35 p-4 backdrop-blur-md animate-fade-in select-none" onClick={onClose}>
       <div 
-        className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-white/90 backdrop-blur-xl shadow-2xl border border-white/50 flex flex-col md:flex-row max-h-[90vh]"
+        className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-white/90 backdrop-blur-xl shadow-2xl border border-white/50 flex flex-col md:flex-row min-h-[85vh] max-h-[90vh]"
         id="schedule-modal-container"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Left Side: Brand Accent Column */}
-        <div className="hidden md:flex w-1/3 bg-brand-ice text-slate-800 p-5 flex-col justify-between relative overflow-hidden border-r border-slate-200/60">
+        <div className="hidden md:flex w-[280px] shrink-0 bg-brand-ice text-slate-800 p-7 flex-col justify-between relative overflow-hidden border-r border-slate-200/60">
           <div className="absolute top-0 right-0 -mr-6 -mt-6 w-24 h-24 rounded-full bg-brand-blue/10 blur-xl pointer-events-none" />
           <div className="relative z-10">
-            <div className="flex items-center gap-1.5 text-brand-blue font-bold text-[10px] uppercase tracking-wider mb-4">
-              <Award size={12} className="text-brand-blue" />
+            <div className="flex items-center gap-2 text-brand-blue font-bold text-xs uppercase tracking-wider mb-5">
+              <Award size={13} className="text-brand-blue" />
               LOBA ADVISING
             </div>
-            <h3 className="text-xl font-display font-black leading-tight tracking-tight text-slate-900">
+            <h3 className="text-xl font-display font-black leading-snug tracking-tight text-slate-900">
               Let's Accelerate Your Scholarly Journey.
             </h3>
-            <p className="mt-3 text-[10.5px] text-slate-650 leading-relaxed font-semibold">
+            <p className="mt-4 text-sm text-slate-600 leading-relaxed font-semibold">
               Connect with leading editors and senior scholars to refine, strengthen, and publish your work worldwide.
             </p>
           </div>
-          <div className="relative z-10 border-t border-slate-200 pt-3 text-[9.5px]/1.2 text-slate-500 font-mono tracking-wider font-bold">
+          <div className="relative z-10 border-t border-slate-200 pt-4 text-xs text-slate-500 font-mono tracking-wide font-bold">
             • Over 1,205 peer-reviewed articles published through LOBA advisory guidance.
           </div>
         </div>
@@ -99,9 +111,9 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
         {/* Right Side: Interactive Content */}
         <div className="flex-grow flex flex-col min-w-0">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-white/40 px-6 py-4 bg-white/40">
-            <h2 className="text-sm font-bold text-slate-900 tracking-tight flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-brand-blue" />
+          <div className="flex items-center justify-between border-b border-white/40 px-7 py-5 bg-white/40">
+            <h2 className="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-brand-blue" />
               {submittedSession ? 'Consultation Confirmed' : 'Consulting Intake Portal'}
             </h2>
             <button 
@@ -113,15 +125,15 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
             </button>
           </div>
 
-          <div className="flex-1 p-6 overflow-y-auto max-h-[58vh]">
+          <div className="flex-1 p-7 overflow-y-auto max-h-[62vh]">
             {submittedSession ? (
               /* Ticket Confirmation Visual */
               <div className="flex flex-col items-center py-4 text-center">
                 <div className="rounded-full bg-emerald-50 p-2.5 text-emerald-500 mb-3 ml-1 shadow-sm border border-emerald-250">
                   <CheckCircle2 size={30} />
                 </div>
-                <h3 className="text-sm font-bold text-slate-900">Appointment Locked!</h3>
-                <p className="text-[10.5px] text-slate-600 mt-1 max-w-sm font-semibold">
+                <h3 className="text-base font-bold text-slate-900">Appointment Locked!</h3>
+                <p className="text-sm text-slate-600 mt-2 max-w-sm font-semibold">
                   A confirmation invite has been dispatched to <strong className="text-slate-800">{email}</strong> describing pre-consultation manuscript requirements.
                 </p>
 
@@ -169,7 +181,7 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
                     setNotes('');
                     onClose();
                   }}
-                  className="mt-5 rounded-full bg-brand-navy px-5 py-2 text-[11px] font-bold text-white hover:bg-brand-navy-light transition-all shadow cursor-pointer"
+                  className="mt-5 rounded-full bg-primary px-5 py-2 text-[11px] font-bold text-white hover:bg-primary-dark transition-all shadow cursor-pointer"
                   id="done-ticket-button"
                 >
                   Close Portal
@@ -177,43 +189,43 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
               </div>
             ) : (
               /* Intaking Form */
-              <form onSubmit={handleSubmit} className="space-y-3.5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* Full Name */}
                   <div>
-                    <label className="block text-[10.5px] font-bold text-slate-700 mb-1 px-1">Scholar Full Name *</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5 px-1">Scholar Full Name *</label>
                     <input
                       type="text"
                       required
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Dr. Jane Doe"
-                      className="w-full text-[11px] rounded-lg border border-white/65 bg-white/70 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold placeholder-slate-400"
+                      className="w-full text-sm rounded-lg border border-white/65 bg-white/70 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold placeholder-slate-400"
                     />
                   </div>
 
                   {/* Email Address */}
                   <div>
-                    <label className="block text-[10.5px] font-bold text-slate-700 mb-1 px-1">Academic Email *</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5 px-1">Academic Email *</label>
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. j.doe@university.edu"
-                      className="w-full text-[11px] rounded-lg border border-white/65 bg-white/70 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold placeholder-slate-400"
+                      className="w-full text-sm rounded-lg border border-white/65 bg-white/70 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold placeholder-slate-400"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* Academic Level */}
                   <div>
-                    <label className="block text-[10.5px] font-bold text-slate-700 mb-1 px-1">Academic Credential *</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5 px-1">Academic Credential *</label>
                     <select
                       value={academicLevel}
                       onChange={(e) => setAcademicLevel(e.target.value)}
-                      className="w-full text-[11px] rounded-lg border border-white/65 bg-white/75 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
+                      className="w-full text-sm rounded-lg border border-white/65 bg-white/75 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
                     >
                       <option value="undergraduate">Undergraduate Student</option>
                       <option value="graduate">Master's Student</option>
@@ -226,28 +238,28 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
 
                   {/* Research Field */}
                   <div>
-                    <label className="block text-[10.5px] font-bold text-slate-700 mb-1 px-1">Discipline / Field *</label>
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5 px-1">Discipline / Field *</label>
                     <input
                       type="text"
                       required
                       value={researchField}
                       onChange={(e) => setResearchField(e.target.value)}
                       placeholder="e.g. Bioinformatics"
-                      className="w-full text-[11px] rounded-lg border border-white/65 bg-white/70 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold placeholder-slate-400"
+                      className="w-full text-sm rounded-lg border border-white/65 bg-white/70 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold placeholder-slate-400"
                     />
                   </div>
                 </div>
 
                 {/* Consultation Type */}
                 <div>
-                  <label className="block text-[10.5px] font-bold text-slate-700 mb-1 flex items-center gap-1 px-1">
-                    <BookOpen size={12} className="text-brand-blue" />
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1 px-1">
+                    <BookOpen size={13} className="text-brand-blue" />
                     Primary Consulting Service Requested
                   </label>
                   <select
                     value={consultationType}
                     onChange={(e) => setConsultationType(e.target.value)}
-                    className="w-full text-[11px] rounded-lg border border-white/65 bg-white/75 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
+                    className="w-full text-sm rounded-lg border border-white/65 bg-white/75 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
                   >
                     <option value="manuscript-review">Manuscript Editorial Review (Pre-Submission)</option>
                     <option value="thesis-advising">Thesis & Dissertation Structured Advisory</option>
@@ -258,10 +270,10 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
                 </div>
 
                 {/* Date & Time Select */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-[10.5px] font-bold text-slate-700 mb-1 flex items-center gap-1 px-1">
-                      <Calendar size={12} className="text-brand-blue" />
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1 px-1">
+                      <Calendar size={13} className="text-brand-blue" />
                       Target Date *
                     </label>
                     <input
@@ -270,20 +282,20 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
                       min={new Date().toISOString().split('T')[0]}
                       value={preferredDate}
                       onChange={(e) => setPreferredDate(e.target.value)}
-                      className="w-full text-[11px] rounded-lg border border-white/65 bg-white/75 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
+                      className="w-full text-sm rounded-lg border border-white/65 bg-white/75 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[10.5px] font-bold text-slate-700 mb-1 flex items-center gap-1 px-1">
-                      <Clock size={12} className="text-brand-blue" />
+                    <label className="block text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1 px-1">
+                      <Clock size={13} className="text-brand-blue" />
                       Preferred Hour Window *
                     </label>
                     <select
                       required
                       value={preferredTime}
                       onChange={(e) => setPreferredTime(e.target.value)}
-                      className="w-full text-[11px] rounded-lg border border-white/65 bg-white/75 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
+                      className="w-full text-sm rounded-lg border border-white/65 bg-white/75 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors font-semibold"
                     >
                       <option value="">Select slot...</option>
                       <option value="09:00 - 10:00 AM">09:00 - 10:00 AM UTC</option>
@@ -296,16 +308,16 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
 
                 {/* Special instructions */}
                 <div>
-                  <label className="block text-[10.5px] font-bold text-slate-700 mb-1 flex items-center gap-1 px-1">
-                    <Compass size={12} className="text-brand-blue" />
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1 px-1">
+                    <Compass size={13} className="text-brand-blue" />
                     Additional Notes (Optional)
                   </label>
                   <textarea
-                    rows={2}
+                    rows={3}
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="Share details about your manuscript topic..."
-                    className="w-full text-[11px] rounded-lg border border-white/65 bg-white/70 px-3 py-2 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors placeholder-slate-400 font-semibold resize-none"
+                    className="w-full text-sm rounded-lg border border-white/65 bg-white/70 px-4 py-2.5 text-slate-900 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors placeholder-slate-400 font-semibold resize-none"
                   />
                 </div>
 
@@ -321,7 +333,7 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
                   </button>
                   <button
                     type="submit"
-                    className="rounded-full bg-brand-navy hover:bg-brand-navy-light text-white px-5 py-1.5 text-[11px] font-bold shadow transition-all hover:-translate-y-0.5 cursor-pointer"
+                    className="rounded-full bg-primary hover:bg-primary-dark text-white px-5 py-1.5 text-[11px] font-bold shadow transition-all hover:-translate-y-0.5 cursor-pointer"
                     id="submit-book-btn"
                   >
                     Book Secure Slot

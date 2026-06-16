@@ -144,7 +144,7 @@ export const QuoteForm: React.FC = () => {
       <button
         type="submit"
         disabled={isSubmittingQuote}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 disabled:bg-blue-400 disabled:cursor-not-allowed flex items-center justify-center"
+        className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 disabled:bg-primary/50 disabled:cursor-not-allowed flex items-center justify-center"
       >
         {isSubmittingQuote ? (
           <>
