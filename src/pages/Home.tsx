@@ -89,14 +89,14 @@ export default function Home({ onScheduleClick, onNavClick }: { onScheduleClick?
       />
       <Hero onScheduleClick={onScheduleClick} />
       
-      <div className="w-full mx-auto px-6 py-8">
+      <div className="w-full mx-auto px-6 py-4 md:py-8">
         <TestimonialCarousel />
       </div>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-white">
+      <section id="services" className="py-12 md:py-24 bg-white">
         <div className="w-full mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
               Our Expertise
             </span>
@@ -133,7 +133,7 @@ export default function Home({ onScheduleClick, onNavClick }: { onScheduleClick?
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-10 md:mt-16 text-center">
             <Button variant="primary" size="lg" className="rounded-xl px-7 py-3.5 text-sm font-bold" onClick={() => onNavClick && onNavClick('services')}>
               View All Services
             </Button>
@@ -143,7 +143,7 @@ export default function Home({ onScheduleClick, onNavClick }: { onScheduleClick?
 
       {/* Why Choose Us */}
       <section className="min-h-screen flex flex-col bg-slate-50 overflow-hidden">
-        <div className="flex-1 w-full mx-auto px-6 lg:max-w-7xl flex flex-col py-16 lg:py-20 transform scale-90 origin-center">
+        <div className="flex-1 w-full mx-auto px-6 lg:max-w-7xl flex flex-col py-8 md:py-16 lg:py-20 transform scale-90 origin-center">
           <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
             <div className="relative w-full min-h-[400px] z-10">
               <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl z-0" />
