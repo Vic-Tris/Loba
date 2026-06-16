@@ -861,11 +861,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
           </div>
 
           {/* Footer controls inside modal */}
-          <div className="bg-white/40 border-t border-slate-200/50 px-6 py-3.5 flex items-center justify-between">
-            <div className="flex items-center gap-1 text-[10px] text-slate-500 font-bold">
-              <Heart size={10} className="text-rose-500 fill-rose-500" />
-              <span>Fostering Research Legacy • 2026</span>
-            </div>
+          <div className="bg-white/40 border-t border-slate-200/50 px-6 py-3.5 flex items-center justify-end">
             <button
               onClick={onScheduleClick}
               className="rounded-full bg-primary hover:bg-primary-dark text-white text-[11px] font-bold px-4 py-1.5 transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
