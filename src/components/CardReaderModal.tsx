@@ -156,7 +156,7 @@ export default function CardReaderModal({ card, onClose }: CardReaderModalProps)
               const event = new CustomEvent('trigger-scheduler');
               window.dispatchEvent(event);
             }}
-            className="rounded-full bg-brand-navy hover:bg-brand-navy-light text-white font-bold px-4 py-1.5 transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer"
+            className="rounded-full bg-primary hover:bg-primary-dark text-white font-bold px-4 py-1.5 transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
             id="reader-cta-schedule"
           >
             Direct Review

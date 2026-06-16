@@ -845,7 +845,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
 
                       <button
                         type="submit"
-                        className="w-full rounded-full bg-brand-navy hover:bg-brand-navy-light text-white font-bold py-2.5 text-xs shadow transition-all hover:-translate-y-0.5 cursor-pointer"
+                        className="w-full rounded-full bg-primary hover:bg-primary-dark text-white font-bold py-2.5 text-xs shadow transition-all hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
                       >
                         Send Message
                       </button>
@@ -868,7 +868,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
             </div>
             <button
               onClick={onScheduleClick}
-              className="rounded-full bg-brand-navy hover:bg-brand-navy-light text-white text-[11px] font-bold px-4 py-1.5 transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer"
+              className="rounded-full bg-primary hover:bg-primary-dark text-white text-[11px] font-bold px-4 py-1.5 transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
               id="drawer-footer-schedule"
             >
               Book Consultation
