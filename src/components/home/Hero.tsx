@@ -37,7 +37,7 @@ export function Hero({ onScheduleClick: _onScheduleClick }: { onScheduleClick?: 
               Loba Scholarly Consulting
             </span>
             
-            <h1 className="text-[1.75rem] sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-5xl font-heading font-extrabold text-[#1A365D] leading-[1.2] tracking-tight mb-6">
+            <h1 className="text-[1.3rem] xs:text-[1.5rem] sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-5xl font-heading font-extrabold text-[#1A365D] leading-[1.2] tracking-tight mb-6 whitespace-nowrap">
               Academic Work Done Right
               <span className="text-[#2B6CB0] block mt-1.5 md:mt-2">No Stress, No Rewrites</span>
             </h1>
@@ -54,13 +54,13 @@ export function Hero({ onScheduleClick: _onScheduleClick }: { onScheduleClick?: 
                 { icon: CalendarCheck, label: '2+', sub: 'Years Experience' },
                 { icon: Rocket, label: 'Fast', sub: 'Reliable Delivery' },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 px-5 py-4 flex-1">
-                  <div className="w-9 h-9 bg-blue-100 rounded-lg flex items-center justify-center text-primary shrink-0">
-                    <item.icon size={18} />
+                <div key={i} className="flex flex-col items-center text-center gap-1 px-2 py-3 sm:flex-row sm:items-center sm:text-left sm:gap-3 sm:px-5 sm:py-4 flex-1 min-w-0">
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 bg-blue-100 rounded-lg flex items-center justify-center text-primary shrink-0">
+                    <item.icon size={15} />
                   </div>
-                  <div className="flex flex-col">
-                    <strong className="text-lg font-extrabold text-slate-900 leading-none">{item.label}</strong>
-                    <span className="text-slate-500 text-[11px] mt-0.5 leading-tight">{item.sub}</span>
+                  <div className="flex flex-col min-w-0">
+                    <strong className="text-sm sm:text-lg font-extrabold text-slate-900 leading-none">{item.label}</strong>
+                    <span className="text-slate-500 text-[9px] sm:text-[11px] mt-0.5 leading-tight">{item.sub}</span>
                   </div>
                 </div>
               ))}
