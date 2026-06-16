@@ -110,7 +110,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
               <Award size={13} className="text-brand-blue" />
               LOBA ADVISING
             </div>
-            <h3 className="text-xl font-display font-black leading-snug tracking-tight text-slate-900">
+            <h3 className="text-xl font-display font-black leading-snug tracking-tight text-primary">
               {leftPanel.title}
             </h3>
             <p className="mt-2 text-sm text-brand-blue-dark font-bold tracking-wide">
@@ -134,7 +134,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
         <div className="flex-grow flex flex-col min-w-0">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-slate-200/50 px-7 py-5 bg-white/40">
-            <h2 className="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+            <h2 className="text-base font-bold text-primary tracking-tight flex items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-blue" />
               {activeTopic === 'about' && 'About Loba Consulting'}
               {activeTopic === 'services' && 'Our Services'}
@@ -161,7 +161,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                 {/* Intro */}
                 <div>
                   <span className="inline-block px-3 py-1 rounded-full bg-brand-ice text-brand-blue-dark text-[10px] font-bold uppercase tracking-wider mb-2">Who We Are</span>
-                  <h3 className="text-lg font-display font-black text-slate-900 leading-tight">
+                  <h3 className="text-lg font-display font-black text-[#1A365D] leading-tight">
                     Excellence in Academic & Professional Support
                   </h3>
                   <p className="mt-2.5 text-xs text-slate-600 leading-relaxed font-semibold">
@@ -172,26 +172,26 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4 border-y border-slate-100">
                   <div className="text-left">
-                    <div className="text-xl font-black text-slate-900">100+</div>
+                    <div className="text-xl font-black text-[#1A365D]">100+</div>
                     <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Projects Completed</div>
                   </div>
                   <div className="text-left">
-                    <div className="text-xl font-black text-slate-900">2+</div>
+                    <div className="text-xl font-black text-[#1A365D]">2+</div>
                     <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Years of Experience</div>
                   </div>
                   <div className="text-left">
-                    <div className="text-xl font-black text-slate-900">8</div>
+                    <div className="text-xl font-black text-[#1A365D]">8</div>
                     <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Core Services</div>
                   </div>
                   <div className="text-left">
-                    <div className="text-xl font-black text-slate-900">100%</div>
+                    <div className="text-xl font-black text-[#1A365D]">100%</div>
                     <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Client Satisfaction</div>
                   </div>
                 </div>
 
                 {/* Mission & Approach */}
                 <div className="space-y-3">
-                  <h4 className="font-bold text-xs text-slate-900 uppercase tracking-wider">Our Mission & Approach</h4>
+                  <h4 className="font-bold text-xs text-[#1A365D] uppercase tracking-wider">Our Mission & Approach</h4>
                   <p className="text-xs text-slate-650 leading-relaxed font-semibold">
                     With years of combined experience in research, writing, and academic support, our team handles thesis development, manuscript editing, accurate referencing including APA, and complex academic tasks across different fields.
                   </p>
@@ -200,7 +200,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                   </p>
                   
                   <div className="rounded-xl bg-slate-50 border border-slate-100 p-4 mt-2">
-                    <h5 className="font-bold text-xs text-slate-950">Led by Experts</h5>
+                    <h5 className="font-bold text-xs text-[#1A365D]">Led by Experts</h5>
                     <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
                       Our team is led by <strong>Ogunleye Oluwatobiloba</strong>, an experienced academic consultant with a strong background in student leadership, tutoring, and research support.
                     </p>
@@ -209,40 +209,40 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
 
                 {/* Why Choose Us */}
                 <div className="space-y-3">
-                  <h4 className="font-bold text-xs text-slate-900 uppercase tracking-wider">Why Choose Us</h4>
+                  <h4 className="font-bold text-xs text-[#1A365D] uppercase tracking-wider">Why Choose Us</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                     <div className="flex gap-2.5 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-900">On-Time Delivery, Always</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">On-Time Delivery, Always</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">We respect deadlines. Your work is delivered on schedule, guaranteed.</p>
                       </div>
                     </div>
                     <div className="flex gap-2.5 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-900">Plagiarism-Free Work</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">Plagiarism-Free Work</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">Every project is original and verified for academic integrity.</p>
                       </div>
                     </div>
                     <div className="flex gap-2.5 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-900">Free Revisions</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">Free Revisions</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">We revise until you are completely satisfied — at no extra cost.</p>
                       </div>
                     </div>
                     <div className="flex gap-2.5 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-900">100% Confidentiality</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">100% Confidentiality</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">Your information and work are treated with strict privacy at all times.</p>
                       </div>
                     </div>
                     <div className="flex gap-2.5 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-900">Professional Output</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">Professional Output</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">Expert-level research and writing that meets the highest academic standards.</p>
                       </div>
                     </div>
@@ -251,25 +251,25 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
 
                 {/* Client Stories */}
                 <div className="space-y-3 pt-2">
-                  <h4 className="font-bold text-xs text-slate-900 uppercase tracking-wider">What Our Clients Say</h4>
+                  <h4 className="font-bold text-xs text-[#1A365D] uppercase tracking-wider">What Our Clients Say</h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between">
                       <p className="text-[10.5px] text-slate-600 italic leading-relaxed mb-4">
                         "Oluwatobiloba polished my business proposal to perfection. My supervisor said it was one of the best structured he'd seen. It landed me a major client deal!"
                       </p>
-                      <cite className="not-italic font-bold text-[10px] text-slate-900 block">— Chioma Eyinnaya</cite>
+                      <cite className="not-italic font-bold text-[10px] text-[#1A365D] block">— Chioma Eyinnaya</cite>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between">
                       <p className="text-[10.5px] text-slate-600 italic leading-relaxed mb-4">
                         "Struggled with my research chapter until Oluwatobiloba stepped in. Supervisor raved about the rigorous analysis. A grade and department award."
                       </p>
-                      <cite className="not-italic font-bold text-[10px] text-slate-900 block">— Daniel Osaro</cite>
+                      <cite className="not-italic font-bold text-[10px] text-[#1A365D] block">— Daniel Osaro</cite>
                     </div>
                     <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between">
                       <p className="text-[10.5px] text-slate-600 italic leading-relaxed mb-4">
                         "From rejection risk to A grade glory! His tips on avoiding common pitfalls made my supervisor praise the clarity and originality."
                       </p>
-                      <cite className="not-italic font-bold text-[10px] text-slate-900 block">— Liasu Mobosola</cite>
+                      <cite className="not-italic font-bold text-[10px] text-[#1A365D] block">— Liasu Mobosola</cite>
                     </div>
                   </div>
                 </div>
@@ -282,7 +282,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                 {/* Intro */}
                 <div>
                   <span className="inline-block px-3 py-1 rounded-full bg-brand-ice text-brand-blue-dark text-[10px] font-bold uppercase tracking-wider mb-2">Our Expertise</span>
-                  <h3 className="text-lg font-display font-black text-slate-900 leading-tight">
+                  <h3 className="text-lg font-display font-black text-[#1A365D] leading-tight">
                     Empowering Your Academic Success
                   </h3>
                   <p className="mt-2 text-xs text-slate-605 text-slate-600 leading-relaxed font-semibold">
@@ -293,49 +293,49 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                 {/* 8 Core Services */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">Academic Articles</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">Academic Articles</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       Well-researched, properly cited articles for journals, seminars, and course submissions.
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">Undergraduate Projects</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">Undergraduate Projects</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       Complete final year projects — all chapters — across all departments worldwide.
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">Thesis & Dissertations</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">Thesis & Dissertations</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       Masters and PhD-level thesis writing with deep research and proper university formatting.
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">Data Analysis</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">Data Analysis</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       SPSS, Excel, STATA — full results tables, charts, and Chapter 4 write-up included.
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">Assignments & Essays</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">Assignments & Essays</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       Structured, well-referenced assignment responses with clear arguments for any course.
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">Academic Presentations</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">Academic Presentations</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       Professional PPTX slides with design, speaker notes, and compelling visuals.
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">Business Proposals</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">Business Proposals</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       Investor-ready proposals, business plans, and detailed company profiles.
                     </p>
                   </div>
                   <div className="rounded-xl border border-slate-100 p-4 bg-slate-50/20 text-left">
-                    <h4 className="font-bold text-slate-950 text-xs tracking-tight">CV & Cover Letters</h4>
+                    <h4 className="font-bold text-[#1A365D] text-xs tracking-tight">CV & Cover Letters</h4>
                     <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                       ATS-friendly CVs and cover letters for jobs and academic institutions worldwide.
                     </p>
@@ -344,33 +344,33 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
 
                 {/* Bottom trust segment */}
                 <div className="space-y-3 pt-2">
-                  <h4 className="font-bold text-xs text-slate-900 uppercase tracking-wider">Why Students Trust Loba Consulting</h4>
+                  <h4 className="font-bold text-xs text-[#1A365D] uppercase tracking-wider">Why Students Trust Loba Consulting</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                     <div className="flex gap-2 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-950">Expert Precision</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">Expert Precision</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">Every document is handled by seasoned experts in your specific field of study.</p>
                       </div>
                     </div>
                     <div className="flex gap-2 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-950">Fast Turnaround</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">Fast Turnaround</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">We respect your deadlines and deliver results with incredible speed without sacrificing quality.</p>
                       </div>
                     </div>
                     <div className="flex gap-2 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-950">Original & Plagiarism-Free</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">Original & Plagiarism-Free</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">We provide unique, custom-written content tailored to your specific requirements.</p>
                       </div>
                     </div>
                     <div className="flex gap-2 items-start text-left">
                       <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={13} />
                       <div>
-                        <h5 className="font-bold text-[11px] text-slate-950">Confidentiality Guaranteed</h5>
+                        <h5 className="font-bold text-[11px] text-[#1A365D]">Confidentiality Guaranteed</h5>
                         <p className="text-[10px] text-slate-500 leading-normal mt-0.5">Your privacy and academic integrity are our highest priorities.</p>
                       </div>
                     </div>
@@ -385,7 +385,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                 {/* Intro */}
                 <div>
                   <span className="inline-block px-3 py-1 rounded-full bg-brand-ice text-brand-blue-dark text-[10px] font-bold uppercase tracking-wider mb-2">Transparent Pricing</span>
-                  <h3 className="text-lg font-display font-black text-slate-900 leading-tight">
+                  <h3 className="text-lg font-display font-black text-[#1A365D] leading-tight">
                     Pricing & Packages
                   </h3>
                   <p className="mt-2 text-xs text-slate-600 leading-relaxed font-semibold">
@@ -398,7 +398,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                   {/* Plan 1 */}
                   <div className="rounded-xl border border-slate-200/60 p-4 bg-white shadow-sm text-left">
                     <div className="flex justify-between items-center mb-1">
-                      <h4 className="font-bold text-slate-900 text-xs">Short-form Academic Work</h4>
+                      <h4 className="font-bold text-primary text-xs">Short-form Academic Work</h4>
                       <span className="text-[9px] font-extrabold uppercase tracking-wide px-2 py-0.5 rounded bg-slate-100 text-slate-500 font-mono">Assignments & Articles</span>
                     </div>
                     <ul className="space-y-1.5 mt-3 text-[10.5px] text-slate-600 font-semibold">
@@ -417,7 +417,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                   {/* Plan 2 */}
                   <div className="rounded-xl border border-brand-blue/30 p-4 bg-slate-50 shadow-sm text-left">
                     <div className="flex justify-between items-center mb-1">
-                      <h4 className="font-bold text-slate-900 text-xs">Full Academic Documents</h4>
+                      <h4 className="font-bold text-primary text-xs">Full Academic Documents</h4>
                       <span className="text-[9px] font-extrabold uppercase tracking-wide px-2 py-0.5 rounded bg-brand-blue text-white font-sans shadow-sm ring-2 ring-white">Most Popular</span>
                     </div>
                     <ul className="space-y-1.5 mt-3 text-[10.5px] text-slate-655 text-slate-600 font-semibold">
@@ -437,7 +437,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                   {/* Plan 3 */}
                   <div className="rounded-xl border border-slate-200/60 p-4 bg-white shadow-sm text-left">
                     <div className="flex justify-between items-center mb-1">
-                      <h4 className="font-bold text-slate-900 text-xs">Professional Documents</h4>
+                      <h4 className="font-bold text-primary text-xs">Professional Documents</h4>
                       <span className="text-[9px] font-extrabold uppercase tracking-wide px-2 py-0.5 rounded bg-slate-100 text-slate-500 font-mono">Business Writing</span>
                     </div>
                     <ul className="space-y-1.5 mt-3 text-[10.5px] text-slate-600 font-semibold">
@@ -473,7 +473,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                     <div className="h-10 w-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mx-auto shadow-sm border border-emerald-200">
                       <CheckCircle size={20} />
                     </div>
-                    <h4 className="font-bold text-slate-900 text-xs">Quote Request Submitted</h4>
+                    <h4 className="font-bold text-primary text-xs">Quote Request Submitted</h4>
                     <p className="text-[11px] text-slate-655 text-slate-600 max-w-sm mx-auto font-semibold leading-relaxed">
                       Thank you, <strong className="text-slate-800">{quoteName}</strong>. Our custom service counselors are drafting your estimate package and will email a quote to <strong className="text-slate-800">{quoteEmail}</strong> within 2 hours.
                     </p>
@@ -499,7 +499,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                     {/* Header */}
                     <div>
                       <span className="inline-block px-3 py-1 rounded-full bg-brand-ice text-brand-blue-dark text-[10px] font-bold uppercase tracking-wider mb-2">Tailored Pricing</span>
-                      <h3 className="text-lg font-display font-black text-slate-900 leading-tight">Request a Custom Quote</h3>
+                      <h3 className="text-lg font-display font-black text-[#1A365D] leading-tight">Request a Custom Quote</h3>
                       <p className="text-xs text-slate-500 mt-1 leading-normal font-semibold">
                         Every project is unique. Share your requirements with us, and we'll provide a transparent, flat-rate quote with a guaranteed delivery date.
                       </p>
@@ -508,26 +508,26 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                     {/* Features columns from HTML */}
                     <div className="grid grid-cols-2 gap-3.5">
                       <div className="p-3 bg-slate-55 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-center">
-                        <h5 className="font-bold text-slate-900 text-[10px] uppercase">2-Hour Response</h5>
+                        <h5 className="font-bold text-primary text-[10px] uppercase">2-Hour Response</h5>
                         <p className="text-[9.5px] text-slate-450 text-slate-500 leading-normal mt-0.5">Average time to receive your custom quote.</p>
                       </div>
                       <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-center">
-                        <h5 className="font-bold text-slate-900 text-[10px] uppercase">No Hidden Fees</h5>
+                        <h5 className="font-bold text-primary text-[10px] uppercase">No Hidden Fees</h5>
                         <p className="text-[9.5px] text-slate-500 leading-normal mt-0.5">Transparent pricing with zero surprise costs.</p>
                       </div>
                       <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-center">
-                        <h5 className="font-bold text-slate-900 text-[10px] uppercase">Expert Review</h5>
+                        <h5 className="font-bold text-primary text-[10px] uppercase">Expert Review</h5>
                         <p className="text-[9.5px] text-slate-500 leading-normal mt-0.5">Each request is reviewed by a subject matter expert.</p>
                       </div>
                       <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 flex flex-col justify-center">
-                        <h5 className="font-bold text-slate-900 text-[10px] uppercase">Global Delivery</h5>
+                        <h5 className="font-bold text-primary text-[10px] uppercase">Global Delivery</h5>
                         <p className="text-[9.5px] text-slate-500 leading-normal mt-0.5">We support students and professionals worldwide.</p>
                       </div>
                     </div>
 
                     {/* Form Details */}
                     <div className="border-t border-slate-100 pt-4 space-y-4">
-                      <h4 className="font-bold text-slate-950 text-xs">Quote Details</h4>
+                      <h4 className="font-bold text-[#1A365D] text-xs">Quote Details</h4>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                         {/* Service category */}
@@ -649,7 +649,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                 {/* Intro */}
                 <div>
                   <span className="inline-block px-3 py-1 rounded-full bg-brand-ice text-brand-blue-dark text-[10px] font-bold uppercase tracking-wider mb-2">Need Answers?</span>
-                  <h3 className="text-lg font-display font-black text-slate-900 leading-tight">
+                  <h3 className="text-lg font-display font-black text-[#1A365D] leading-tight">
                     Frequently Asked Questions
                   </h3>
                   <p className="mt-2 text-xs text-slate-600 leading-relaxed font-semibold">
@@ -697,7 +697,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                           onClick={() => toggleFaq(idx)}
                           className="w-full px-4 py-3.5 flex justify-between items-center text-left hover:bg-slate-50 transition-colors cursor-pointer"
                         >
-                          <span className="font-sans font-bold text-slate-900 text-xs pr-4 leading-tight">{faq.q}</span>
+                          <span className="font-sans font-bold text-primary text-xs pr-4 leading-tight">{faq.q}</span>
                           <span className="text-brand-blue font-extrabold text-sm shrink-0">{isExpanded ? '−' : '+'}</span>
                         </button>
                         {isExpanded && (
@@ -720,7 +720,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                     <div className="h-10 w-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mx-auto shadow-sm border border-emerald-200">
                       <CheckCircle size={20} />
                     </div>
-                    <h4 className="font-bold text-slate-900 text-xs">Message Sent Successfully</h4>
+                    <h4 className="font-bold text-primary text-xs">Message Sent Successfully</h4>
                     <p className="text-[11px] text-slate-655 text-slate-600 max-w-sm mx-auto font-semibold leading-relaxed">
                       Thank you for contacting us. Our advisory team has received your message and will reach out to you within 24 hours.
                     </p>
@@ -736,7 +736,7 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                     {/* Header */}
                     <div>
                       <span className="inline-block px-3 py-1 rounded-full bg-brand-ice text-brand-blue-dark text-[10px] font-bold uppercase tracking-wider mb-2">Get In Touch</span>
-                      <h3 className="text-lg font-display font-black text-slate-900 leading-tight">Let’s Discuss Your Success.</h3>
+                      <h3 className="text-lg font-display font-black text-[#1A365D] leading-tight">Let’s Discuss Your Success.</h3>
                       <p className="text-xs text-slate-505 text-slate-500 mt-1 leading-normal font-semibold">
                         Whether you have a quick question or a complex academic project, our team is ready to provide the guidance you need. Fill out the form or reach out directly.
                       </p>
@@ -745,17 +745,17 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
                     {/* Direct Contact Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                       <div className="p-3 bg-slate-50/70 rounded-xl border border-slate-100 flex flex-col justify-center">
-                        <h5 className="font-bold text-slate-950 text-[10px] uppercase">Call/WhatsApp</h5>
+                        <h5 className="font-bold text-[#1A365D] text-[10px] uppercase">Call/WhatsApp</h5>
                         <p className="text-brand-blue font-bold text-[11.5px] mt-0.5">+234808 584 7676</p>
                         <p className="text-slate-400 text-[9px] mt-0.5">Mon - Fri, 8am - 6pm</p>
                       </div>
                       <div className="p-3 bg-slate-50/70 rounded-xl border border-slate-100 flex flex-col justify-center">
-                        <h5 className="font-bold text-slate-950 text-[10px] uppercase">Email Address</h5>
+                        <h5 className="font-bold text-[#1A365D] text-[10px] uppercase">Email Address</h5>
                         <p className="text-brand-blue font-bold text-[11.5px] mt-0.5">lobaconsulting2@gmail.com</p>
                         <p className="text-slate-400 text-[9px] mt-0.5 font-semibold">Replies in 24 hours</p>
                       </div>
                       <div className="p-3 bg-slate-50/70 rounded-xl border border-slate-100 flex flex-col justify-center">
-                        <h5 className="font-bold text-slate-950 text-[10px] uppercase">Our Office</h5>
+                        <h5 className="font-bold text-[#1A365D] text-[10px] uppercase">Our Office</h5>
                         <p className="text-brand-blue font-bold text-[11.5px] mt-0.5">Ibadan, Nigeria</p>
                         <p className="text-slate-400 text-[9px] mt-0.5">Available for virtual sessions</p>
                       </div>

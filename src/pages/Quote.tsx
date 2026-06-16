@@ -53,7 +53,7 @@ export default function Quote() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
                 Tailored Pricing
               </span>
-              <h1 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-8 leading-tight">
                 Request a Custom <span className="text-primary">Quote.</span>
               </h1>
               <p className="text-slate-600 text-lg leading-relaxed mb-12">
@@ -70,7 +70,7 @@ export default function Quote() {
                 ].map((item, i) => (
                   <div key={i} className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                     <item.icon size={24} className="text-primary-light mb-4" />
-                    <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
+                    <h4 className="font-bold text-primary mb-2">{item.title}</h4>
                     <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
                   </div>
                 ))}

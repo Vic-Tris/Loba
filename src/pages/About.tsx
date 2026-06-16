@@ -84,7 +84,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-heading font-bold text-slate-900 mb-8 leading-tight"
+              className="text-4xl md:text-6xl font-heading font-bold text-primary mb-8 leading-tight"
             >
               Excellence in Academic <br /> & Professional Support
             </motion.h1>
@@ -121,7 +121,7 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div className="space-y-6 text-slate-600 leading-relaxed">
-              <h2 className="text-3xl font-heading font-bold text-slate-900 mb-8">Our Mission & Approach</h2>
+              <h2 className="text-3xl font-heading font-bold text-primary mb-8">Our Mission & Approach</h2>
               <p>
                 With years of combined experience in research, writing, and academic support, 
                 our team handles thesis development, manuscript editing, accurate referencing 
@@ -137,7 +137,7 @@ export default function About() {
                     <Users className="text-primary" size={28} />
                 </div>
                 <div>
-                    <h4 className="font-bold text-slate-900 mb-2 underline decoration-primary/30 decoration-4 underline-offset-4">Led by Experts</h4>
+                    <h4 className="font-bold text-primary mb-2 underline decoration-primary/30 decoration-4 underline-offset-4">Led by Experts</h4>
                     <p className="text-sm">
                         Our team is led by <strong>Ogunleye Oluwatobiloba</strong>, an experienced 
                         academic consultant with a strong background in student leadership, 
@@ -148,7 +148,7 @@ export default function About() {
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-3xl font-heading font-bold text-slate-900 mb-8">Why Choose Us</h2>
+              <h2 className="text-3xl font-heading font-bold text-primary mb-8">Why Choose Us</h2>
               <div className="grid grid-cols-1 gap-6">
                 {features.map((feature, i) => (
                   <motion.div 
@@ -161,7 +161,7 @@ export default function About() {
                   >
                     <div className="shrink-0 mt-1">{feature.icon}</div>
                     <div>
-                        <h4 className="font-bold text-slate-900 mb-1">{feature.title}</h4>
+                        <h4 className="font-bold text-primary mb-1">{feature.title}</h4>
                         <p className="text-sm text-slate-500 leading-relaxed">{feature.description}</p>
                     </div>
                   </motion.div>
@@ -177,7 +177,7 @@ export default function About() {
         <div className="container mx-auto px-6">
             <div className="text-center mb-16 max-w-2xl mx-auto">
                 <span className="text-primary font-bold text-xs uppercase tracking-widest">Client Stories</span>
-                <h2 className="text-4xl font-heading font-bold text-slate-900 mt-4">What Our Clients Say</h2>
+                <h2 className="text-4xl font-heading font-bold text-primary mt-4">What Our Clients Say</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -200,7 +200,7 @@ export default function About() {
                             <div className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center text-white font-bold text-xs`}>
                                 {t.initials}
                             </div>
-                            <cite className="not-italic font-bold text-slate-900 text-sm tracking-tight">{t.author}</cite>
+                            <cite className="not-italic font-bold text-primary text-sm tracking-tight">{t.author}</cite>
                         </div>
                     </motion.div>
                 ))}

@@ -74,7 +74,7 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6"
+            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
           >
             Pricing & Packages
           </motion.h1>
@@ -117,7 +117,7 @@ export default function Pricing() {
                   <span className="text-[10px] font-bold text-primary tracking-widest uppercase block mb-3">
                     {plan.category}
                   </span>
-                  <h3 className="text-2xl font-heading font-bold text-slate-900 mb-1 leading-tight">
+                  <h3 className="text-2xl font-heading font-bold text-primary mb-1 leading-tight">
                     {plan.title}
                   </h3>
                 </div>
@@ -136,7 +136,7 @@ export default function Pricing() {
                 <div className="pt-8 border-t border-slate-50 mb-8 space-y-3">
                   <div className="flex items-center gap-2 text-slate-500 text-sm">
                     <Clock size={16} />
-                    <span>Delivery: <span className="font-bold text-slate-900">{plan.delivery}</span></span>
+                    <span>Delivery: <span className="font-bold text-primary">{plan.delivery}</span></span>
                   </div>
                   <p className="text-[10px] text-primary font-bold uppercase tracking-wider pl-6 italic">
                     {plan.rush}

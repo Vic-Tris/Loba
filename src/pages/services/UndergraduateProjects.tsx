@@ -56,7 +56,7 @@ export default function UndergraduateProjects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6"
+            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
           >
             Undergraduate Projects
           </motion.h1>
@@ -80,7 +80,7 @@ export default function UndergraduateProjects() {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">About This Service</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">About This Service</h2>
                 <div className="prose prose-slate max-w-none text-slate-600 space-y-4 text-left">
                   <p>Our undergraduate project writing service provides complete final year project assistance from proposal to final chapters. We cover all departments and fields of study, delivering well-researched, properly structured academic projects that meet your institution's standards.</p>
                   <p>Whether you're in Business Administration, Engineering, Computer Science, Social Sciences, or any other field, our expert writers have the expertise to deliver quality work that will help you defend confidently.</p>
@@ -88,7 +88,7 @@ export default function UndergraduateProjects() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">What's Included</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">What's Included</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {features.map((feature, idx) => (
                     <div key={idx} className="flex gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100 text-left">
@@ -96,7 +96,7 @@ export default function UndergraduateProjects() {
                         <Check size={14} strokeWidth={3} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-900 mb-1">{feature.title}</h4>
+                        <h4 className="font-bold text-primary mb-1">{feature.title}</h4>
                         <p className="text-sm text-slate-500">{feature.desc}</p>
                       </div>
                     </div>
@@ -105,7 +105,7 @@ export default function UndergraduateProjects() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">Departments We Cover</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">Departments We Cover</h2>
                 <div className="flex flex-wrap gap-2">
                   {departments.map((dept, idx) => (
                     <span key={idx} className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
@@ -119,7 +119,7 @@ export default function UndergraduateProjects() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">How It Works</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">How It Works</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {steps.map((step) => (
                     <div key={step.id} className="text-center space-y-3">
@@ -127,7 +127,7 @@ export default function UndergraduateProjects() {
                         {step.id}
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-900">{step.title}</h4>
+                        <h4 className="font-bold text-primary">{step.title}</h4>
                         <p className="text-xs text-slate-500">{step.desc}</p>
                       </div>
                     </div>
@@ -139,20 +139,20 @@ export default function UndergraduateProjects() {
             {/* Sidebar */}
             <div className="space-y-8">
               <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm sticky top-24 text-left">
-                <h3 className="text-xl font-heading font-bold text-slate-900 mb-6">Service Summary</h3>
+                <h3 className="text-xl font-heading font-bold text-primary mb-6">Service Summary</h3>
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Delivery Time</span>
-                    <span className="font-bold text-slate-900">5 - 14 Days</span>
+                    <span className="font-bold text-primary">5 - 14 Days</span>
                   </div>
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Chapters</span>
-                    <span className="font-bold text-slate-900">1 - 5 (Full)</span>
+                    <span className="font-bold text-primary">1 - 5 (Full)</span>
                   </div>
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Format</span>
-                    <span className="font-bold text-slate-900">APA / Harvard</span>
+                    <span className="font-bold text-primary">APA / Harvard</span>
                   </div>
                   <div className="flex justify-between py-3">
                     <span className="text-slate-500">Revisions</span>
@@ -179,7 +179,7 @@ export default function UndergraduateProjects() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-slate-100">
-                  <p className="text-sm font-bold text-slate-900 mb-1">Progressive Delivery</p>
+                  <p className="text-sm font-bold text-primary mb-1">Progressive Delivery</p>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Get chapters as they are completed so you can get early feedback from your supervisor.
                   </p>

@@ -100,7 +100,7 @@ export default function Home({ onScheduleClick, onNavClick }: { onScheduleClick?
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
               Our Expertise
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
               Empowering Your Academic Success
             </h2>
             <p className="text-slate-600 leading-relaxed">
@@ -125,7 +125,7 @@ export default function Home({ onScheduleClick, onNavClick }: { onScheduleClick?
                 <span className="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-2 block">
                   {service.category}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight">{service.title}</h3>
+                <h3 className="text-xl font-bold text-primary mb-4 tracking-tight">{service.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">
                   {service.desc}
                 </p>
@@ -162,7 +162,7 @@ export default function Home({ onScheduleClick, onNavClick }: { onScheduleClick?
             </div>
 
             <div className="flex flex-col justify-center h-full py-8">
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-8 lg:mb-12">
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary mb-8 lg:mb-12">
                 Why Students Trust Loba Consulting
               </h2>
               <div className="space-y-8 flex-1 flex flex-col justify-center">
@@ -189,7 +189,7 @@ export default function Home({ onScheduleClick, onNavClick }: { onScheduleClick?
                       <CheckCircle2 size={22} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 mb-1 text-lg">{item.title}</h4>
+                      <h4 className="font-bold text-primary mb-1 text-lg">{item.title}</h4>
                       <p className="text-slate-500 text-base leading-relaxed">{item.desc}</p>
                     </div>
                   </div>

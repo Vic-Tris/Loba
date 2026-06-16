@@ -32,7 +32,7 @@ export default function Contact() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 text-left">
                   Get In Touch
                 </span>
-                <h1 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-8 text-left">
+                <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-8 text-left">
                   Let’s Discuss Your <span className="text-primary">Success.</span>
                 </h1>
                 <p className="text-slate-600 leading-relaxed mb-12 text-left">
@@ -51,7 +51,7 @@ export default function Contact() {
                         <item.icon size={24} />
                       </div>
                       <div className="text-left">
-                        <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
+                        <h4 className="font-bold text-primary mb-1">{item.title}</h4>
                         <p className="text-primary font-medium">{item.value}</p>
                         <p className="text-slate-400 text-xs">{item.sub}</p>
                       </div>
@@ -92,7 +92,7 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-white p-10 rounded-[32px] shadow-2xl shadow-primary/5 border border-slate-100"
               >
-                <h3 className="text-2xl font-bold text-slate-900 mb-8 text-left">Send a Message</h3>
+                <h3 className="text-2xl font-bold text-primary mb-8 text-left">Send a Message</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Input 

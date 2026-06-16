@@ -123,7 +123,7 @@ export default function Services() {
                   <div className={`w-16 h-16 rounded-2xl ${service.color} text-white flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}>
                     <service.icon size={30} />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                  <h3 className="text-2xl font-bold text-primary mb-4">{service.title}</h3>
                   <p className="text-slate-500 text-sm leading-relaxed mb-8">
                     {service.desc}
                   </p>

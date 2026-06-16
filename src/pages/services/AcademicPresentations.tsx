@@ -50,7 +50,7 @@ export default function AcademicPresentations() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6"
+            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
           >
             Academic Presentations
           </motion.h1>
@@ -74,7 +74,7 @@ export default function AcademicPresentations() {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">About This Service</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">About This Service</h2>
                 <div className="prose prose-slate max-w-none text-slate-600 space-y-4 text-left">
                   <p>Our presentation design service creates professional PowerPoint slides that captivate your audience. Whether you need slides for a seminar, defense, or business presentation, we deliver visually stunning and well-organized content.</p>
                   <p>We don't just put text on slides; we design an experience. With custom graphics, clear layouts, and professionally written speaker notes, you'll feel confident and prepared for your presentation.</p>
@@ -82,7 +82,7 @@ export default function AcademicPresentations() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">What's Included</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">What's Included</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {features.map((feature, idx) => (
                     <div key={idx} className="flex gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100 text-left">
@@ -90,7 +90,7 @@ export default function AcademicPresentations() {
                         <Check size={14} strokeWidth={3} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-900 mb-1">{feature.title}</h4>
+                        <h4 className="font-bold text-primary mb-1">{feature.title}</h4>
                         <p className="text-sm text-slate-500">{feature.desc}</p>
                       </div>
                     </div>
@@ -99,7 +99,7 @@ export default function AcademicPresentations() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">How It Works</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">How It Works</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {steps.map((step) => (
                     <div key={step.id} className="text-center space-y-3">
@@ -107,7 +107,7 @@ export default function AcademicPresentations() {
                         {step.id}
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-900">{step.title}</h4>
+                        <h4 className="font-bold text-primary">{step.title}</h4>
                         <p className="text-xs text-slate-500">{step.desc}</p>
                       </div>
                     </div>
@@ -119,20 +119,20 @@ export default function AcademicPresentations() {
             {/* Sidebar */}
             <div className="space-y-8">
               <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm sticky top-24 text-left">
-                <h3 className="text-xl font-heading font-bold text-slate-900 mb-6">Service Summary</h3>
+                <h3 className="text-xl font-heading font-bold text-primary mb-6">Service Summary</h3>
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Delivery Time</span>
-                    <span className="font-bold text-slate-900">24h - 3 Days</span>
+                    <span className="font-bold text-primary">24h - 3 Days</span>
                   </div>
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Slides</span>
-                    <span className="font-bold text-slate-900">10 - 50+</span>
+                    <span className="font-bold text-primary">10 - 50+</span>
                   </div>
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Format</span>
-                    <span className="font-bold text-slate-900">Editable PPTX</span>
+                    <span className="font-bold text-primary">Editable PPTX</span>
                   </div>
                   <div className="flex justify-between py-3">
                     <span className="text-slate-500">Speaker Notes</span>
@@ -159,7 +159,7 @@ export default function AcademicPresentations() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-slate-100">
-                  <p className="text-sm font-bold text-slate-900 mb-1">Defense Ready?</p>
+                  <p className="text-sm font-bold text-primary mb-1">Defense Ready?</p>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     We specialize in academic defense slides. Our speaker notes guide you through every point to ensure a smooth presentation.
                   </p>

@@ -112,7 +112,7 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
         <div className="flex-grow flex flex-col min-w-0">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-white/40 px-7 py-5 bg-white/40">
-            <h2 className="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+            <h2 className="text-base font-bold text-primary tracking-tight flex items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-blue" />
               {submittedSession ? 'Consultation Confirmed' : 'Consulting Intake Portal'}
             </h2>
@@ -132,7 +132,7 @@ export default function ScheduleModal({ isOpen, onClose, onBookSuccess }: Schedu
                 <div className="rounded-full bg-emerald-50 p-2.5 text-emerald-500 mb-3 ml-1 shadow-sm border border-emerald-250">
                   <CheckCircle2 size={30} />
                 </div>
-                <h3 className="text-base font-bold text-slate-900">Appointment Locked!</h3>
+                <h3 className="text-base font-bold text-primary">Appointment Locked!</h3>
                 <p className="text-sm text-slate-600 mt-2 max-w-sm font-semibold">
                   A confirmation invite has been dispatched to <strong className="text-slate-800">{email}</strong> describing pre-consultation manuscript requirements.
                 </p>

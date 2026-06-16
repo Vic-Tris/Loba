@@ -32,7 +32,7 @@ export class ErrorBoundary extends Component<Props, State> {
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle size={32} className="text-red-600" />
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 mb-2">Oops! Something went wrong</h1>
+            <h1 className="text-2xl font-bold text-primary mb-2">Oops! Something went wrong</h1>
             <p className="text-slate-600 mb-8">{this.state.error?.message || 'An unexpected error occurred. Please refresh the page.'}</p>
             <button
               onClick={() => window.location.reload()}
