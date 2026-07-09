@@ -83,7 +83,7 @@ export default function About() {
             <motion.span
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
-              className="inline-flex rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-6"
+              className="inline-flex rounded-full bg-white border border-slate-200 shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-primary mb-6"
             >
               Who We Are
             </motion.span>
@@ -99,7 +99,7 @@ export default function About() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.16 }}
-              className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10"
+              className="text-lg md:text-xl text-text-body leading-relaxed mb-10"
             >
               We are a dedicated team of academic writing consultants committed to helping students and professionals
               deliver high-quality documents with absolute confidence.
@@ -112,10 +112,10 @@ export default function About() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.25 + i * 0.08 }}
-                  className="rounded-2xl bg-white/70 backdrop-blur-sm border border-white p-4 shadow-[0_4px_16px_rgba(17,43,85,0.04)]"
+                  className="rounded-2xl bg-white border border-slate-200 p-4 shadow-[0_4px_16px_rgba(17,43,85,0.04)]"
                 >
                   <div className="text-2xl md:text-3xl font-black text-primary mb-1">{stat.value}</div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">
+                  <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest leading-none">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -129,7 +129,7 @@ export default function About() {
       <section className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-            <div className="space-y-6 text-slate-600 leading-relaxed">
+            <div className="space-y-6 text-text-body leading-relaxed">
               <h2 className="text-3xl font-heading font-bold text-primary mb-2">Our Mission & Approach</h2>
               <p>
                 With years of combined experience in research, writing, and academic support, our team handles thesis
@@ -140,14 +140,14 @@ export default function About() {
                 We understand how demanding academic work can be, so we focus on making the process easier, faster, and
                 more reliable for you. Our work is guided by clarity, quality, and timely delivery.
               </p>
-              <div className="bg-brand-ice/80 p-7 rounded-3xl border border-slate-100 flex gap-5 items-start shadow-sm">
-                <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center shrink-0">
+              <div className="bg-brand-ice p-7 rounded-3xl border border-slate-200 flex gap-5 items-start shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center shrink-0">
                   <Users className="text-primary" size={26} />
                 </div>
                 <div>
                   <h4 className="font-bold text-primary mb-2">Led by Experts</h4>
-                  <p className="text-sm">
-                    Our team is led by <strong>Ogunleye Oluwatobiloba</strong>, an experienced academic consultant with a
+                  <p className="text-sm text-text-body">
+                    Our team is led by <strong className="text-primary">Ogunleye Oluwatobiloba</strong>, an experienced academic consultant with a
                     strong background in student leadership, tutoring, and research support.
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function About() {
                     </div>
                     <div>
                       <h4 className="font-bold text-primary mb-1">{feature.title}</h4>
-                      <p className="text-sm text-slate-500 leading-relaxed">{feature.description}</p>
+                      <p className="text-sm text-text-body leading-relaxed">{feature.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -205,7 +205,7 @@ export default function About() {
                       <Star key={si} size={15} fill="currentColor" className="text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-slate-600 italic text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
+                  <p className="text-text-body italic text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div
@@ -238,7 +238,7 @@ export default function About() {
               <span className="text-xs font-bold uppercase tracking-widest">Limited Slots Weekly</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-white/65 max-w-2xl mx-auto mb-10 text-lg">
+            <p className="text-white/90 max-w-2xl mx-auto mb-10 text-lg">
               Let&apos;s help you deliver your work professionally and on time. Reach out today and secure your spot for
               the week.
             </p>

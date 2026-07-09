@@ -35,7 +35,7 @@ export default function Header({ onNavClick, onScheduleClick, activeTopic }: Hea
 
   return (
     <header className="sticky top-3 z-40 w-full mx-auto px-4 md:px-6 select-none transition-all duration-300">
-      <div className="relative z-50 w-full bg-white/80 backdrop-blur-xl rounded-full border border-white/60 px-3.5 py-1 sm:px-5 sm:py-1.5 md:px-7 shadow-[0_8px_30px_rgba(17,43,85,0.05)] flex items-center justify-between">
+      <div className="relative z-50 w-full bg-white/95 backdrop-blur-xl rounded-full border border-slate-200/80 px-3.5 py-1 sm:px-5 sm:py-1.5 md:px-7 shadow-[0_8px_30px_rgba(17,43,85,0.05)] flex items-center justify-between">
         {/* Left: Logo */}
         <button
           type="button"
@@ -61,7 +61,7 @@ export default function Header({ onNavClick, onScheduleClick, activeTopic }: Hea
                   type="button"
                   onClick={() => onNavClick(item.id)}
                   className={`relative py-1 text-[13px] font-bold tracking-wide transition-all duration-300 hover:text-brand-navy cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 focus-visible:ring-offset-2 rounded-sm ${
-                    isActive ? 'text-brand-navy font-extrabold' : 'text-slate-800 hover:text-brand-navy'
+                    isActive ? 'text-brand-navy font-extrabold' : 'text-slate-900 hover:text-brand-navy'
                   }`}
                   id={`nav-${item.id}`}
                   aria-current={isActive ? 'page' : undefined}

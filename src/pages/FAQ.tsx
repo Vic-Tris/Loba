@@ -63,7 +63,7 @@ export default function FAQ() {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-5"
+            className="inline-flex rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-primary mb-5"
           >
             Need Answers?
           </motion.span>
@@ -79,7 +79,7 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.16 }}
-            className="text-lg text-slate-600 leading-relaxed"
+            className="text-lg text-text-body leading-relaxed"
           >
             Find quick answers to common questions about our services, process, and policies.
           </motion.p>
@@ -120,7 +120,7 @@ export default function FAQ() {
                     </span>
                     <span
                       className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-                        isOpen ? 'bg-primary text-white' : 'bg-slate-100 text-slate-500'
+                        isOpen ? 'bg-primary text-white' : 'bg-brand-ice text-primary'
                       }`}
                     >
                       <ChevronDown
@@ -138,7 +138,7 @@ export default function FAQ() {
                         transition={{ duration: 0.28, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="px-5 md:px-6 pb-5 md:pb-6 text-slate-600 text-sm leading-relaxed border-t border-primary/10 pt-4">
+                        <div className="px-5 md:px-6 pb-5 md:pb-6 text-text-body text-sm leading-relaxed border-t border-primary/10 pt-4">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -157,7 +157,7 @@ export default function FAQ() {
             </div>
 
             <h3 className="text-2xl font-heading font-bold mb-3 relative z-10">Still have questions?</h3>
-            <p className="text-white/65 mb-8 max-w-lg mx-auto relative z-10">
+            <p className="text-white/90 mb-8 max-w-lg mx-auto relative z-10">
               Can&apos;t find the answer you&apos;re looking for? Reach out to our team directly.
             </p>
 
@@ -176,7 +176,7 @@ export default function FAQ() {
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/55 border-t border-white/10 pt-7 relative z-10">
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/80 border-t border-white/10 pt-7 relative z-10">
               <a
                 href="mailto:lobaconsulting2@gmail.com"
                 className="flex items-center gap-2 hover:text-white transition-colors"

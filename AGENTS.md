@@ -6,7 +6,7 @@ This file is the project's committed home for project-intrinsic agent knowledge:
 
 - `BrowserRouter` is mounted in `src/main.tsx`. Route table and modal shell live in `src/App.tsx`.
 - On **Home (`/`)**, Header nav opens `NavigationDrawers` topic modals. On **full pages**, Header navigates via routes in `src/utils/routes.ts` (`TOPIC_ROUTES` / `topicFromPath`).
-- Each drawer footer (and desktop left panel) has a **See more** CTA that closes the modal and routes to the full page.
+- Each drawer has **one** footer **See more** CTA (closes modal, routes to full page). Do not add a second See more in the left panel.
 - Service detail paths: `/services/data-analysis`, `/services/business`, `/services/academic-presentations`, `/services/undergrad`, `/services/cover-letter`, `/services/academic-article`, `/services/thesisdissertations`, `/services/assignments-essay`.
 - Brand tokens: `src/index.css` (`brand-navy`, `brand-blue`, `brand-ice`, `primary`).
 
