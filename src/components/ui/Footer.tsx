@@ -6,16 +6,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-bg-dark text-white pt-20 pb-10">
+    <footer className="bg-bg-dark text-white pt-12 md:pt-20 pb-8 md:pb-10">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
           {/* Brand */}
           <div className="space-y-6 text-left">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center text-white font-bold text-xl rounded-lg">
-                L
-              </div>
-              <span className="font-heading font-bold text-xl text-white">Loba Consulting</span>
+              <img src="/LOBA Scholar Consulting white.svg" alt="Loba Consulting Logo" className="h-10 w-auto object-contain scale-150 origin-left" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed">
               Empowering students and professionals with expert academic support, 
@@ -82,15 +79,15 @@ export function Footer() {
             <h4 className="font-heading font-bold text-lg mb-6 text-white uppercase tracking-wider text-xs opacity-60">Contact</h4>
             <ul className="space-y-4">
               <li className="flex gap-3 text-slate-400 text-sm">
-                <Phone size={18} className="text-primary-light shrink-0" />
+                <Phone size={18} className="text-white shrink-0" />
                 <span>+234808 584 7676</span>
               </li>
               <li className="flex gap-3 text-slate-400 text-sm">
-                <Mail size={18} className="text-primary-light shrink-0" />
+                <Mail size={18} className="text-white shrink-0" />
                 <span>lobaconsulting2@gmail.com</span>
               </li>
               <li className="flex gap-3 text-slate-400 text-sm">
-                <MapPin size={18} className="text-primary-light shrink-0" />
+                <MapPin size={18} className="text-white shrink-0" />
                 <span>Ibadan, Nigeria</span>
               </li>
               <li>

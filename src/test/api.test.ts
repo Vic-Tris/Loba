@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { api } from '../utils/api'
 
 describe('API Utility', () => {
   beforeEach(() => {
@@ -6,21 +7,19 @@ describe('API Utility', () => {
   })
 
   it('should have proper base URL configured', () => {
-    // This test verifies that the API module loads without errors
-    // The actual API interceptor setup is tested through integration tests
-    const baseURL = import.meta.env.VITE_API_BASE_URL
-    expect(baseURL).toBeDefined()
+    // axios instance always has a baseURL (env or /api fallback)
+    expect(api.defaults.baseURL).toBeDefined()
   })
 
-  it('should provide baseURL from environment', () => {
-    expect(import.meta.env.VITE_API_BASE_URL).toBe('http://localhost:4000/api/v1')
+  it('should provide baseURL from environment or fallback', () => {
+    const baseURL = import.meta.env.VITE_API_BASE_URL || '/api'
+    expect(api.defaults.baseURL).toBe(baseURL)
   })
 
   it('should handle missing API base URL gracefully', () => {
-    // Environment variable should be set to fallback value
-    const baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000/api/v1'
+    const baseURL = import.meta.env.VITE_API_BASE_URL || '/api'
     expect(baseURL).toBeDefined()
-    expect(baseURL).toContain('localhost')
+    expect(typeof baseURL).toBe('string')
+    expect(baseURL.length).toBeGreaterThan(0)
   })
 })
-

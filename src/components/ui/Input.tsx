@@ -24,7 +24,7 @@ const Input = React.forwardRef<HTMLInputElement & HTMLTextAreaElement, InputProp
           <Component
             ref={ref}
             className={cn(
-              'w-full bg-white border border-slate-200 rounded-md py-3 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/10 focus:border-primary',
+              'w-full bg-white border border-slate-200 rounded-xl py-3 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/15 focus:border-brand-blue',
               leftIcon ? 'pl-10' : 'pl-4',
               'pr-4',
               error ? 'border-red-500' : 'border-slate-200',

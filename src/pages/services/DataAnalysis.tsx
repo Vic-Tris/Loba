@@ -51,7 +51,7 @@ export default function DataAnalysis() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6"
+            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
           >
             Data Analysis
           </motion.h1>
@@ -75,7 +75,7 @@ export default function DataAnalysis() {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">About This Service</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">About This Service</h2>
                 <div className="prose prose-slate max-w-none text-slate-600 space-y-4 text-left">
                   <p>Our data analysis service provides professional statistical analysis for academic research. Whether you need help with SPSS, Excel, or STATA, we deliver accurate results with comprehensive interpretation.</p>
                   <p>We provide complete Chapter 4 write-up, results tables, charts, and interpretation that you can directly include in your thesis or dissertation. All analyses are conducted following academic standards.</p>
@@ -83,7 +83,7 @@ export default function DataAnalysis() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">What's Included</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">What's Included</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {features.map((feature, idx) => (
                     <div key={idx} className="flex gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100 text-left">
@@ -91,7 +91,7 @@ export default function DataAnalysis() {
                         <Check size={14} strokeWidth={3} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-900 mb-1">{feature.title}</h4>
+                        <h4 className="font-bold text-primary mb-1">{feature.title}</h4>
                         <p className="text-sm text-slate-500">{feature.desc}</p>
                       </div>
                     </div>
@@ -100,7 +100,7 @@ export default function DataAnalysis() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">Software & Tools</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">Software & Tools</h2>
                 <div className="flex flex-wrap gap-2">
                   {tools.map(tool => (
                     <span key={tool} className="px-4 py-2 bg-primary/5 text-primary border border-primary/10 rounded-full text-sm font-medium">
@@ -111,7 +111,7 @@ export default function DataAnalysis() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-left">How It Works</h2>
+                <h2 className="text-2xl font-heading font-bold text-primary mb-6 text-left">How It Works</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {steps.map((step) => (
                     <div key={step.id} className="text-center space-y-3">
@@ -119,7 +119,7 @@ export default function DataAnalysis() {
                         {step.id}
                       </div>
                       <div>
-                        <h4 className="font-bold text-slate-900">{step.title}</h4>
+                        <h4 className="font-bold text-primary">{step.title}</h4>
                         <p className="text-xs text-slate-500">{step.desc}</p>
                       </div>
                     </div>
@@ -131,20 +131,20 @@ export default function DataAnalysis() {
             {/* Sidebar */}
             <div className="space-y-8">
               <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm sticky top-24 text-left">
-                <h3 className="text-xl font-heading font-bold text-slate-900 mb-6">Service Summary</h3>
+                <h3 className="text-xl font-heading font-bold text-primary mb-6">Service Summary</h3>
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Delivery Time</span>
-                    <span className="font-bold text-slate-900">24h - 5 Days</span>
+                    <span className="font-bold text-primary">24h - 5 Days</span>
                   </div>
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Software</span>
-                    <span className="font-bold text-slate-900">SPSS/Excel</span>
+                    <span className="font-bold text-primary">SPSS/Excel</span>
                   </div>
                   <div className="flex justify-between py-3 border-b border-slate-100">
                     <span className="text-slate-500">Output</span>
-                    <span className="font-bold text-slate-900">Tables + Charts</span>
+                    <span className="font-bold text-primary">Tables + Charts</span>
                   </div>
                   <div className="flex justify-between py-3">
                     <span className="text-slate-500">Write-up</span>
@@ -163,7 +163,7 @@ export default function DataAnalysis() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-slate-100">
-                  <p className="text-sm font-bold text-slate-900 mb-1">Fast Turnaround</p>
+                  <p className="text-sm font-bold text-primary mb-1">Fast Turnaround</p>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Need it urgently? We offer express delivery for time-sensitive research project analysis.
                   </p>

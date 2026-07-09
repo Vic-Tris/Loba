@@ -1,154 +1,174 @@
 import { motion } from 'framer-motion';
 import { SEO } from '../components/ui/SEO';
 import { Button } from '../components/ui/Button';
-import { 
-  Database, 
-  PenTool, 
-  Presentation, 
-  Briefcase, 
-  Award, 
+import {
+  Database,
+  PenTool,
+  Presentation,
+  Briefcase,
+  Award,
   FileSearch,
   CheckCircle2,
   ArrowRight,
-  Info
+  Info,
+  FileText,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ALL_SERVICES = [
   {
     id: 'data-analysis',
-    path: '/services/data-analysis', // Aligns perfectly with App.tsx
+    path: '/services/data-analysis',
     title: 'Data Analysis',
     desc: 'Turn raw data into meaningful insights. We handle SPSS, R, Python, and Excel data processing for researchers.',
     icon: Database,
     features: ['Statistical Testing', 'Visualizations', 'Methodology Support', 'Reporting'],
-    color: 'bg-blue-600'
+    color: 'bg-brand-blue',
   },
   {
     id: 'thesis',
-    path: '/services/thesisdissertations', // Fallback path if you create this later
+    path: '/services/thesisdissertations',
     title: 'Thesis & Dissertations',
     desc: 'From proposal to final defense. Comprehensive academic support for PhD and Master’s candidates.',
     icon: Award,
     features: ['Topic Selection', 'Literature Review', 'Data Collection', 'Final Editing'],
-    color: 'bg-purple-600'
+    color: 'bg-primary',
   },
   {
     id: 'academic-article',
-    path: '/services/academic-article', // Fallback path if you create this later
+    path: '/services/academic-article',
     title: 'Academic Articles',
     desc: 'Prepare your research for world-class journals. Our experts refine your work for maximum impact.',
     icon: FileSearch,
     features: ['Journal Formatting', 'Citation Correction', 'Executive Summaries', 'Proofreading'],
-    color: 'bg-green-600'
+    color: 'bg-success',
   },
   {
     id: 'cover-letter',
-    path: '/services/cover-letter', // Aligns perfectly with App.tsx
+    path: '/services/cover-letter',
     title: 'CV & Cover Letters',
     desc: 'ATS-friendly CVs and professional cover letters crafted to land interviews globally.',
     icon: Briefcase,
     features: ['ATS Optimization', 'Professional Formatting', 'Tailored Cover'],
-    color: 'bg-rose-600'
+    color: 'bg-brand-navy',
   },
   {
     id: 'business-proposal',
-    path: '/services/business', // Aligns perfectly with App.tsx /services/business
+    path: '/services/business',
     title: 'Business Proposals',
     desc: 'Win investors and clients with high-impact business documentation tailored to your industry.',
     icon: Briefcase,
     features: ['Market Analysis', 'Financial Projections', 'Executive Summary', 'Pitch Decks'],
-    color: 'bg-amber-600'
+    color: 'bg-amber-600',
   },
   {
     id: 'academic-presentations',
-    path: '/services/academic-presentations', // Aligns perfectly with App.tsx
+    path: '/services/academic-presentations',
     title: 'Academic Presentations',
     desc: 'Captivating slides and speeches for your defense or conference presentation.',
     icon: Presentation,
     features: ['PowerPoint Design', 'Speaker Notes', 'Q&A Prep', 'Visual Assets'],
-    color: 'bg-rose-600'
+    color: 'bg-rose-600',
   },
   {
     id: 'undergrad-project',
-    path: '/services/undergrad', // Aligns perfectly with App.tsx /services/undergrad
+    path: '/services/undergrad',
     title: 'Undergraduate Projects',
     desc: 'Simplified project management and writing support for final year students across all faculties.',
     icon: PenTool,
     features: ['Chapter 1-5 Support', 'Reference Styling', 'Format Alignment', 'Concept Notes'],
-    color: 'bg-indigo-600'
-  }
+    color: 'bg-indigo-600',
+  },
+  {
+    id: 'assignments-essay',
+    path: '/services/assignments-essay',
+    title: 'Assignments & Essays',
+    desc: 'Structured, well-referenced assignment responses with clear arguments for any course.',
+    icon: FileText,
+    features: ['Clear Structure', 'Citations', 'Argument Development', 'Proofreading'],
+    color: 'bg-orange-600',
+  },
 ];
 
 export default function Services() {
   return (
     <>
-      <SEO 
-        title="Our Services" 
-        description="Explore the wide range of academic and professional consulting services offered by Loba Consulting." 
+      <SEO
+        title="Our Services"
+        description="Explore the wide range of academic and professional consulting services offered by Loba Consulting."
       />
 
-      {/* Header */}
-      <section className="pt-40 pb-20 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-[-20deg] translate-x-1/2" />
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy via-primary to-brand-blue text-white pt-16 pb-20 md:pt-20 md:pb-28">
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute -top-24 -right-16 w-80 h-80 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-brand-blue/40 blur-3xl" />
+        </div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6">
-              Expert Services for <br/> Academic & Career <span className="text-primary-light">Growth.</span>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <span className="inline-flex items-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white/90 mb-6">
+              Our Expertise
+            </span>
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+              Expert Services for <br />
+              Academic & Career <span className="text-sky-200">Growth.</span>
             </h1>
-            <p className="text-white/70 max-w-2xl mx-auto text-lg">
-              We provide precision-driven consulting solutions that bridge the gap between academic research and professional excellence.
+            <p className="text-white/75 max-w-2xl mx-auto text-lg leading-relaxed">
+              Precision-driven consulting that bridges academic research and professional excellence — with clear process, confidential delivery, and expert review.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-24 bg-brand-ice/40">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {ALL_SERVICES.map((service, i) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="group flex flex-col p-10 rounded-[40px] border border-slate-100 bg-white hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 transition-all text-left"
+                transition={{ delay: i * 0.04 }}
+                className="group flex flex-col p-8 md:p-9 rounded-[28px] border border-white/80 bg-white/90 backdrop-blur-sm shadow-[0_8px_30px_rgba(17,43,85,0.06)] hover:shadow-[0_16px_40px_rgba(17,43,85,0.1)] hover:-translate-y-1 transition-all text-left"
               >
                 <div className="flex-grow">
-                  <div className={`w-16 h-16 rounded-2xl ${service.color} text-white flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform`}>
-                    <service.icon size={30} />
+                  <div
+                    className={`w-14 h-14 rounded-2xl ${service.color} text-white flex items-center justify-center mb-6 shadow-lg shadow-primary/10 group-hover:scale-105 transition-transform`}
+                  >
+                    <service.icon size={26} />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8">
-                    {service.desc}
-                  </p>
-                  
-                  <ul className="mb-8 space-y-3">
-                    {service.features.map(f => (
+                  <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-6">{service.desc}</p>
+
+                  <ul className="mb-8 space-y-2.5">
+                    {service.features.map((f) => (
                       <li key={f} className="flex items-center gap-2 text-slate-600 text-sm">
-                        <CheckCircle2 size={16} className="text-primary-light" />
+                        <CheckCircle2 size={15} className="text-brand-blue shrink-0" />
                         {f}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Bottom Action Grid: Both buttons fully aligned with core configuration paths */}
-                <div className="grid grid-cols-2 gap-3 mt-auto pt-4">
+                <div className="grid grid-cols-2 gap-3 mt-auto pt-2">
                   <Link to={service.path} className="w-full block">
-                    <Button variant="outline" size="sm" className="w-full text-xs py-3 border-slate-200 text-slate-700 hover:bg-slate-50">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full text-xs py-3 rounded-full border-slate-200 text-slate-700 hover:bg-brand-ice"
+                    >
                       <Info size={14} className="mr-1" /> Details
                     </Button>
                   </Link>
-
                   <Link to={`/quote?service=${service.id}`} className="w-full block">
-                    <Button variant="primary" size="sm" className="w-full text-xs py-3 bg-primary text-white shadow-md shadow-primary/10">
-                      Quote <ArrowRight size={14} className="ml-1 group-hover:translate-x-0.5 transition-transform" />
+                    <Button
+                      variant="primary"
+                      size="sm"
+                      className="w-full text-xs py-3 rounded-full shadow-md shadow-primary/15"
+                    >
+                      Quote <ArrowRight size={14} className="ml-1" />
                     </Button>
                   </Link>
                 </div>
@@ -159,31 +179,39 @@ export default function Services() {
       </section>
 
       {/* Process CTA */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="bg-primary rounded-[48px] p-12 md:p-20 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-            
+          <div className="bg-gradient-to-br from-brand-navy to-primary rounded-[36px] p-10 md:p-16 relative overflow-hidden shadow-[0_20px_50px_rgba(22,34,53,0.2)]">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 -left-10 w-56 h-56 bg-brand-blue/20 rounded-full blur-3xl" />
+
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-left">
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">Need a custom <br/> service package?</h2>
-                <p className="text-white/60 mb-10 max-w-md">Our consultants can design a bespoke support plan for larger research teams or multi-stage projects.</p>
-                <div className="flex flex-wrap gap-4">
-                  <Link to="/contact">
-                    <Button variant="white" size="lg">Speak with an Expert</Button>
-                  </Link>
-                </div>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-5">
+                  Need a custom <br /> service package?
+                </h2>
+                <p className="text-white/65 mb-8 max-w-md leading-relaxed">
+                  Our consultants can design a bespoke support plan for larger research teams or multi-stage projects.
+                </p>
+                <Link to="/contact">
+                  <Button variant="white" size="lg" className="rounded-full">
+                    Speak with an Expert
+                  </Button>
+                </Link>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: 'Submit Brief', step: 1 },
                   { label: 'Get Matched', step: 2 },
                   { label: 'Review Drafts', step: 3 },
-                  { label: 'Final Delivery', step: 4 }
-                ].map(item => (
-                  <div key={item.step} className="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 text-left">
-                    <span className="text-primary-light font-bold text-3xl opacity-40">0{item.step}</span>
-                    <p className="text-white font-semibold mt-2">{item.label}</p>
+                  { label: 'Final Delivery', step: 4 },
+                ].map((item) => (
+                  <div
+                    key={item.step}
+                    className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/15 text-left"
+                  >
+                    <span className="text-sky-200 font-bold text-2xl opacity-70">0{item.step}</span>
+                    <p className="text-white font-semibold mt-2 text-sm">{item.label}</p>
                   </div>
                 ))}
               </div>
