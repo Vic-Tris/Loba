@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { X, Award, CheckCircle, Info, Heart } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { X, Award, CheckCircle, Info, ArrowRight } from 'lucide-react';
+import { TOPIC_ROUTES } from '../utils/routes';
 
 export interface NavigationDrawersProps {
   activeTopic: string | null;
@@ -8,20 +10,9 @@ export interface NavigationDrawersProps {
 }
 
 export default function NavigationDrawers({ activeTopic, onClose, onScheduleClick }: NavigationDrawersProps) {
-  if (!activeTopic || activeTopic === 'home') return null;
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (activeTopic && activeTopic !== 'home') {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [activeTopic]);
-
-  // Local interactive states
+  // Local interactive states (hooks must run unconditionally)
   const [quoteService, setQuoteService] = React.useState('');
   const [quoteUrgency, setQuoteUrgency] = React.useState('standard');
   const [quoteDraft, setQuoteDraft] = React.useState('');
@@ -30,9 +21,40 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
   const [quoteEmail, setQuoteEmail] = React.useState('');
   const [quoteContext, setQuoteContext] = React.useState('');
   const [quoteSent, setQuoteSent] = React.useState(false);
-
   const [faqExpanded, setFaqExpanded] = React.useState<Record<number, boolean>>({});
   const [messageSent, setMessageSent] = React.useState(false);
+
+  const isOpen = Boolean(activeTopic && activeTopic !== 'home');
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  // Keyboard close (Escape)
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, onClose]);
+
+  if (!isOpen || !activeTopic) return null;
+
+  const handleSeeMore = () => {
+    const route = TOPIC_ROUTES[activeTopic];
+    if (!route) return;
+    onClose();
+    navigate(route);
+  };
 
   const toggleFaq = (idx: number) => {
     setFaqExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
@@ -123,11 +145,22 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
             )}
           </div>
           
-          {leftPanel.stats && (
-            <div className="relative z-10 border-t border-slate-200 pt-4 text-xs text-slate-500 font-mono tracking-wide font-bold">
-              • {leftPanel.stats}
-            </div>
-          )}
+          <div className="relative z-10 space-y-4">
+            {leftPanel.stats && (
+              <div className="border-t border-slate-200 pt-4 text-xs text-slate-500 font-mono tracking-wide font-bold">
+                • {leftPanel.stats}
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={handleSeeMore}
+              className="w-full group inline-flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary-dark text-white text-[12px] font-bold px-4 py-2.5 shadow-[0_4px_14px_rgba(0,50,98,0.22)] transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 focus-visible:ring-offset-2 cursor-pointer"
+              id="drawer-left-see-more"
+            >
+              See more
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+            </button>
+          </div>
         </div>
 
         {/* Right Side: Scrollable Interactive Content */}
@@ -144,9 +177,11 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
               {activeTopic === 'contact' && 'Get in Touch'}
             </h2>
             <button 
+              type="button"
               onClick={onClose}
-              className="rounded-full p-1 text-slate-400 hover:bg-slate-200/50 hover:text-slate-700 transition-colors pointer-cursor"
+              className="rounded-full p-1 text-slate-400 hover:bg-slate-200/50 hover:text-slate-700 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40"
               id="close-modal-btn"
+              aria-label="Close"
             >
               <X size={18} />
             </button>
@@ -860,11 +895,21 @@ export default function NavigationDrawers({ activeTopic, onClose, onScheduleClic
             )}
           </div>
 
-          {/* Footer controls inside modal */}
-          <div className="bg-white/40 border-t border-slate-200/50 px-6 py-3.5 flex items-center justify-end">
+          {/* Footer controls inside modal — See more + Book (mobile + desktop) */}
+          <div className="bg-white/60 backdrop-blur-sm border-t border-slate-200/50 px-5 py-3.5 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
             <button
+              type="button"
+              onClick={handleSeeMore}
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary-dark text-white text-[12px] font-bold px-5 py-2.5 transition-all shadow-[0_4px_14px_rgba(0,50,98,0.18)] hover:-translate-y-0.5 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 focus-visible:ring-offset-2"
+              id="drawer-footer-see-more"
+            >
+              See more
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+            </button>
+            <button
+              type="button"
               onClick={onScheduleClick}
-              className="rounded-full bg-primary hover:bg-primary-dark text-white text-[11px] font-bold px-4 py-1.5 transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer whitespace-nowrap"
+              className="rounded-full border-2 border-primary/15 bg-white hover:bg-brand-ice text-primary text-[11px] font-bold px-4 py-2.5 transition-all shadow-sm hover:-translate-y-0.5 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 focus-visible:ring-offset-2"
               id="drawer-footer-schedule"
             >
               Book Consultation
