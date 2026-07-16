@@ -106,14 +106,14 @@ export default function Services() {
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-flex items-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white/90 mb-6">
+            <span className="inline-flex items-center rounded-full bg-white/15 backdrop-blur-md border border-white/30 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white mb-6">
               Our Expertise
             </span>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight text-white">
               Expert Services for <br />
-              Academic & Career <span className="text-sky-200">Growth.</span>
+              Academic & Career <span className="text-sky-100">Growth.</span>
             </h1>
-            <p className="text-white/75 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p className="text-white/90 max-w-2xl mx-auto text-lg leading-relaxed">
               Precision-driven consulting that bridges academic research and professional excellence — with clear process, confidential delivery, and expert review.
             </p>
           </motion.div>
@@ -131,7 +131,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
-                className="group flex flex-col p-8 md:p-9 rounded-[28px] border border-white/80 bg-white/90 backdrop-blur-sm shadow-[0_8px_30px_rgba(17,43,85,0.06)] hover:shadow-[0_16px_40px_rgba(17,43,85,0.1)] hover:-translate-y-1 transition-all text-left"
+                className="group flex flex-col p-8 md:p-9 rounded-[28px] border border-slate-200 bg-white shadow-[0_8px_30px_rgba(17,43,85,0.06)] hover:shadow-[0_16px_40px_rgba(17,43,85,0.1)] hover:-translate-y-1 transition-all text-left"
               >
                 <div className="flex-grow">
                   <div
@@ -140,12 +140,12 @@ export default function Services() {
                     <service.icon size={26} />
                   </div>
                   <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-6">{service.desc}</p>
+                  <p className="text-text-body text-sm leading-relaxed mb-6">{service.desc}</p>
 
                   <ul className="mb-8 space-y-2.5">
                     {service.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-slate-600 text-sm">
-                        <CheckCircle2 size={15} className="text-brand-blue shrink-0" />
+                      <li key={f} className="flex items-center gap-2 text-text-body text-sm">
+                        <CheckCircle2 size={15} className="text-brand-blue-dark shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -157,7 +157,7 @@ export default function Services() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full text-xs py-3 rounded-full border-slate-200 text-slate-700 hover:bg-brand-ice"
+                      className="w-full text-xs py-3 rounded-full border-slate-300 text-primary hover:bg-brand-ice"
                     >
                       <Info size={14} className="mr-1" /> Details
                     </Button>
@@ -190,7 +190,7 @@ export default function Services() {
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-5">
                   Need a custom <br /> service package?
                 </h2>
-                <p className="text-white/65 mb-8 max-w-md leading-relaxed">
+                <p className="text-white/90 mb-8 max-w-md leading-relaxed">
                   Our consultants can design a bespoke support plan for larger research teams or multi-stage projects.
                 </p>
                 <Link to="/contact">

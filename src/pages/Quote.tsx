@@ -54,13 +54,13 @@ export default function Quote() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
             <div className="text-left">
-              <span className="inline-flex rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-6">
+              <span className="inline-flex rounded-full bg-white border border-slate-200 shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-primary mb-6">
                 Tailored Pricing
               </span>
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 leading-tight">
-                Request a Custom <span className="text-brand-blue">Quote.</span>
+                Request a Custom <span className="text-brand-blue-dark">Quote.</span>
               </h1>
-              <p className="text-slate-600 text-lg leading-relaxed mb-10">
+              <p className="text-text-body text-lg leading-relaxed mb-10">
                 Every project is unique. Share your requirements with us, and we&apos;ll provide a transparent,
                 flat-rate quote with a guaranteed delivery date.
               </p>
@@ -74,11 +74,11 @@ export default function Quote() {
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="p-5 rounded-2xl bg-white/90 border border-white shadow-[0_6px_20px_rgba(17,43,85,0.05)] hover:shadow-md transition-shadow"
+                    className="p-5 rounded-2xl bg-white border border-slate-200 shadow-[0_6px_20px_rgba(17,43,85,0.05)] hover:shadow-md transition-shadow"
                   >
-                    <item.icon size={22} className="text-brand-blue mb-3" />
+                    <item.icon size={22} className="text-brand-blue-dark mb-3" />
                     <h4 className="font-bold text-primary mb-1.5 text-sm">{item.title}</h4>
-                    <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+                    <p className="text-text-body text-xs leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -87,24 +87,24 @@ export default function Quote() {
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white/95 backdrop-blur-xl p-8 md:p-10 rounded-[28px] border border-white shadow-[0_16px_50px_rgba(17,43,85,0.1)] relative overflow-hidden"
+              className="bg-white p-8 md:p-10 rounded-[28px] border border-slate-200 shadow-[0_16px_50px_rgba(17,43,85,0.1)] relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 blur-3xl rounded-full pointer-events-none" />
 
               <h3 className="text-2xl font-bold text-primary mb-1 text-left relative z-10">Quote Details</h3>
-              <p className="text-slate-500 text-sm mb-8 text-left relative z-10">
+              <p className="text-text-body text-sm mb-8 text-left relative z-10">
                 Fill the form below to get an accurate estimate.
               </p>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5 text-left">
-                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
                       Service Category
                     </label>
                     <select
                       {...register('service', { required: 'Please select a service' })}
-                      className="w-full bg-brand-ice/50 border border-slate-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-800"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-900"
                     >
                       <option value="">Select Service</option>
                       <option value="data-analysis">Data Analysis</option>
@@ -120,10 +120,10 @@ export default function Quote() {
                   </div>
 
                   <div className="flex flex-col gap-1.5 text-left">
-                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Urgency</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">Urgency</label>
                     <select
                       {...register('urgency')}
-                      className="w-full bg-brand-ice/50 border border-slate-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-800"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-800"
                     >
                       <option value="standard">Standard (7-10 Days)</option>
                       <option value="urgent">Urgent (3-5 Days)</option>
@@ -134,40 +134,40 @@ export default function Quote() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-1.5 text-left">
-                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
                       Draft Link or Status
                     </label>
                     <input
                       type="text"
                       placeholder="e.g. Google Drive link or 'Not started'"
                       {...register('draft')}
-                      className="w-full bg-brand-ice/50 border border-slate-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-800 placeholder:text-slate-400"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-900 placeholder:text-slate-500"
                     />
                   </div>
 
                   <div className="flex flex-col gap-1.5 text-left">
-                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
                       Pages/Words (Est.)
                     </label>
                     <input
                       type="text"
                       placeholder="e.g. 5000 words"
                       {...register('pageestimate')}
-                      className="w-full bg-brand-ice/50 border border-slate-200 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-800 placeholder:text-slate-400"
+                      className="w-full bg-white border border-slate-300 rounded-xl py-3.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-900 placeholder:text-slate-500"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-3 text-left">
-                  <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                  <label className="text-xs font-bold uppercase tracking-widest text-primary">
                     Your Contact Details
                   </label>
                   <input
                     placeholder="Full Name"
                     {...register('name', { required: 'Name is required' })}
-                    className={`w-full bg-brand-ice/50 border ${
+                    className={`w-full bg-white border ${
                       errors.name ? 'border-red-400' : 'border-slate-200'
-                    } rounded-xl py-3 px-4 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue placeholder:text-slate-400`}
+                    } rounded-xl py-3 px-4 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue placeholder:text-slate-500`}
                   />
                   {errors.name && (
                     <span className="text-red-500 text-[10px] uppercase font-bold">
@@ -181,9 +181,9 @@ export default function Quote() {
                       required: 'Email is required',
                       pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' },
                     })}
-                    className={`w-full bg-brand-ice/50 border ${
+                    className={`w-full bg-white border ${
                       errors.email ? 'border-red-400' : 'border-slate-200'
-                    } rounded-xl py-3 px-4 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue placeholder:text-slate-400`}
+                    } rounded-xl py-3 px-4 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue placeholder:text-slate-500`}
                   />
                   {errors.email && (
                     <span className="text-red-500 text-[10px] uppercase font-bold">
@@ -193,15 +193,15 @@ export default function Quote() {
                 </div>
 
                 <div className="flex flex-col gap-1.5 text-left">
-                  <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+                  <label className="text-xs font-bold uppercase tracking-widest text-primary">
                     Additional Context
                   </label>
                   <textarea
                     placeholder="Special requirements, research area, etc."
                     {...register('context', { required: 'Project context is required' })}
-                    className={`w-full bg-brand-ice/50 border ${
+                    className={`w-full bg-white border ${
                       errors.context ? 'border-red-400' : 'border-slate-200'
-                    } rounded-xl py-3.5 px-4 text-sm min-h-[100px] resize-none focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-800 placeholder:text-slate-400`}
+                    } rounded-xl py-3.5 px-4 text-sm min-h-[100px] resize-none focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue text-slate-900 placeholder:text-slate-500`}
                   />
                   {errors.context && (
                     <span className="text-red-500 text-[10px] uppercase font-bold">
@@ -220,7 +220,7 @@ export default function Quote() {
                   Generate My Quote
                 </Button>
 
-                <p className="text-slate-400 text-[10px] text-center uppercase tracking-widest font-semibold">
+                <p className="text-slate-600 text-[10px] text-center uppercase tracking-widest font-semibold">
                   Secure & Confidential Project Submission
                 </p>
               </form>

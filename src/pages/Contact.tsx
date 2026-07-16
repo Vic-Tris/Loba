@@ -34,13 +34,13 @@ export default function Contact() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16">
               <div>
-                <span className="inline-flex rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-6 text-left">
+                <span className="inline-flex rounded-full bg-white border border-slate-200 shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-primary mb-6 text-left">
                   Get In Touch
                 </span>
                 <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 text-left leading-tight">
-                  Let&apos;s Discuss Your <span className="text-brand-blue">Success.</span>
+                  Let&apos;s Discuss Your <span className="text-brand-blue-dark">Success.</span>
                 </h1>
-                <p className="text-slate-600 leading-relaxed mb-10 text-left text-lg">
+                <p className="text-text-body leading-relaxed mb-10 text-left text-lg">
                   Whether you have a quick question or a complex academic project, our team is ready to provide the
                   guidance you need. Fill out the form or reach out directly.
                 </p>
@@ -63,15 +63,15 @@ export default function Contact() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="flex gap-5 group p-4 rounded-2xl bg-white/70 border border-white shadow-sm hover:shadow-md transition-all"
+                      className="flex gap-5 group p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all"
                     >
-                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                      <div className="w-12 h-12 rounded-2xl bg-brand-ice shadow-sm border border-slate-200 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                         <item.icon size={22} />
                       </div>
                       <div className="text-left">
                         <h4 className="font-bold text-primary mb-0.5 text-sm">{item.title}</h4>
-                        <p className="text-brand-blue font-semibold text-sm">{item.value}</p>
-                        <p className="text-slate-400 text-xs mt-0.5">{item.sub}</p>
+                        <p className="text-brand-blue-dark font-semibold text-sm">{item.value}</p>
+                        <p className="text-slate-600 text-xs mt-0.5 font-medium">{item.sub}</p>
                       </div>
                     </div>
                   ))}
@@ -79,8 +79,8 @@ export default function Contact() {
 
                 <div className="mt-8 p-6 rounded-3xl bg-whatsapp/10 border border-whatsapp/20 flex items-center justify-between gap-5">
                   <div className="text-left">
-                    <p className="text-whatsapp font-bold mb-1">Instant Response?</p>
-                    <p className="text-slate-600 text-sm">Chat with our counselors directly on WhatsApp.</p>
+                    <p className="text-whatsapp-dark font-bold mb-1">Instant Response?</p>
+                    <p className="text-text-body text-sm">Chat with our counselors directly on WhatsApp.</p>
                   </div>
                   <Button
                     variant="whatsapp"
@@ -97,7 +97,7 @@ export default function Contact() {
                 >
                   <div className="text-left">
                     <p className="text-pink-600 font-bold mb-1">Follow us</p>
-                    <p className="text-slate-600 text-sm">Reach us on Instagram</p>
+                    <p className="text-text-body text-sm">Reach us on Instagram</p>
                   </div>
                   <Button
                     className="border-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-400 text-white rounded-full shrink-0"
@@ -114,7 +114,7 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white/95 backdrop-blur-xl p-8 md:p-10 rounded-[28px] shadow-[0_16px_50px_rgba(17,43,85,0.1)] border border-white"
+                className="bg-white p-8 md:p-10 rounded-[28px] shadow-[0_16px_50px_rgba(17,43,85,0.1)] border border-slate-200"
               >
                 <h3 className="text-2xl font-bold text-primary mb-7 text-left">Send a Message</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
@@ -183,7 +183,7 @@ export default function Contact() {
                     Send Message
                   </Button>
 
-                  <p className="text-center text-slate-400 text-xs">
+                  <p className="text-center text-slate-600 text-xs font-medium">
                     By submitting, you agree to our privacy policy and terms.
                   </p>
                 </form>

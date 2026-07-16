@@ -70,7 +70,7 @@ export default function Pricing() {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-5"
+            className="inline-flex rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-primary mb-5"
           >
             Transparent Pricing
           </motion.span>
@@ -86,7 +86,7 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.16 }}
-            className="text-lg text-slate-600 leading-relaxed"
+            className="text-lg text-text-body leading-relaxed"
           >
             Clear, fair pricing with no hidden fees. Final cost may vary based on complexity, word count, and technical
             requirements.
@@ -126,7 +126,7 @@ export default function Pricing() {
 
                 <ul className="space-y-3.5 mb-8 flex-grow">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex gap-3 text-sm text-slate-600 text-left">
+                    <li key={idx} className="flex gap-3 text-sm text-text-body text-left">
                       <div className="mt-0.5 bg-emerald-50 rounded-full p-0.5 text-emerald-600 shrink-0">
                         <Check size={14} strokeWidth={3} />
                       </div>
@@ -136,7 +136,7 @@ export default function Pricing() {
                 </ul>
 
                 <div className="pt-6 border-t border-slate-100 mb-7 space-y-2">
-                  <div className="flex items-center gap-2 text-slate-500 text-sm">
+                  <div className="flex items-center gap-2 text-slate-700 text-sm">
                     <Clock size={15} className="text-brand-blue" />
                     <span>
                       Delivery: <span className="font-bold text-primary">{plan.delivery}</span>
@@ -161,7 +161,7 @@ export default function Pricing() {
 
           <div className="mt-14 bg-brand-ice rounded-2xl p-6 border border-slate-200/60 max-w-4xl mx-auto flex gap-4 text-left items-start shadow-sm">
             <Info className="text-brand-blue shrink-0 mt-0.5" size={20} />
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-text-body leading-relaxed">
               <strong className="text-primary">Notice:</strong> Urgent requests may attract additional fees. All
               payments are final and non-refundable. Revisions are free when they align with the original project
               instructions provided at the start of the engagement.
@@ -175,7 +175,7 @@ export default function Pricing() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 translate-x-1/3 pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h2 className="text-3xl font-heading font-bold mb-5">Have more questions?</h2>
-          <p className="text-white/65 mb-9 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/90 mb-9 max-w-2xl mx-auto leading-relaxed">
             Check our frequently asked questions for detailed information about how we work, payment methods, and our
             revision policy.
           </p>

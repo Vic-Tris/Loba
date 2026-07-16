@@ -14,20 +14,20 @@ const Input = React.forwardRef<HTMLInputElement & HTMLTextAreaElement, InputProp
     
     return (
       <div className="w-full space-y-1.5 text-left">
-        {label && <label className="text-sm font-medium text-slate-700">{label}</label>}
+        {label && <label className="text-sm font-semibold text-primary">{label}</label>}
         <div className="relative group">
           {leftIcon && (
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors">
               {leftIcon}
             </div>
           )}
           <Component
             ref={ref}
             className={cn(
-              'w-full bg-white border border-slate-200 rounded-xl py-3 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/15 focus:border-brand-blue',
+              'w-full bg-white border border-slate-300 rounded-xl py-3 text-sm text-slate-900 placeholder:text-slate-500 transition-all focus:outline-none focus:ring-2 focus:ring-brand-blue/15 focus:border-brand-blue',
               leftIcon ? 'pl-10' : 'pl-4',
               'pr-4',
-              error ? 'border-red-500' : 'border-slate-200',
+              error ? 'border-red-500' : 'border-slate-300',
               isTextArea && 'min-h-[120px] resize-none pt-3',
               className
             )}
